@@ -9,9 +9,33 @@ public class Profile {
     private String hometown;
     private int userID;
 
-    public Profile() {
+    
+    /** constructor for a node*/
+    public Profile(String UserName , String NameOne , String NameTwo, String WorkPlace , String HomeTown , int ID)
+    {
+        username = UserName;
+        firstName = NameOne;
+        surname = NameTwo;
+        workplace = WorkPlace;
+        hometown = HomeTown;
+        userID = ID;
         friends = new Profile[100];
+        LeftNode = null;
+        RightNode = null;
     }
+    
+    public Profile(){
+        username = "random";
+        firstName = "randomfirst";
+        surname = "randomLast";
+        workplace = "dundee";
+        hometown = "dundee";
+        userID = 0123;
+        friends = new Profile[100];
+        LeftNode = null;
+        RightNode = null;
+    }
+  
 
     public String getUsername() {
         return username;
