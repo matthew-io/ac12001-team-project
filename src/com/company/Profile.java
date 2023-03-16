@@ -36,6 +36,7 @@ public class Profile {
         leftNode = null;
         rightNode = null;
     }
+
     public String getUsername() {
         return username;
     }
