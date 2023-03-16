@@ -4,42 +4,13 @@ public class Profile {
     private String username;
     private String firstName;
     private String surname;
+    private Profile[] friends;
     private String workplace;
     private String hometown;
-    private Profile leftNode;
-    private Profile rightNode;
-    private Profile[] friends;
     private int userID;
 
-    public Profile(String UserName , String NameOne , String NameTwo, String WorkPlace , String HomeTown , int ID)
-    {
-        username = UserName;
-        firstName = NameOne;
-        surname = NameTwo;
-        workplace = WorkPlace;
-        hometown = HomeTown;
-        userID = ID;
+    public Profile() {
         friends = new Profile[100];
-        leftNode = null;
-        rightNode = null;
-    }
-
-    public Profile(){
-        username = "random";
-        firstName = "randomfirst";
-        surname = "randomLast";
-        workplace = "dundee";
-        hometown = "dundee";
-        userID = 0123;
-        friends = new Profile[100];
-        leftNode = null;
-        rightNode = null;
-    }
-
-    public void printDetails() {
-        System.out.println("First Name: " + this.firstName);
-        System.out.println("Surname: " + this.surname);
-        System.out.println("Hometown: " + this.hometown);
     }
 
     public String getUsername() {
