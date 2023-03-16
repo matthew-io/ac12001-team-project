@@ -7,12 +7,35 @@ public class Profile {
     private Profile[] friends;
     private String workplace;
     private String hometown;
+    private Profile rightNode;
+    private Profile leftNode;
     private int userID;
 
-    public Profile() {
+
+    public Profile(String UserName , String NameOne , String NameTwo, String WorkPlace , String HomeTown , int ID)
+    {
+        username = UserName;
+        firstName = NameOne;
+        surname = NameTwo;
+        workplace = WorkPlace;
+        hometown = HomeTown;
+        userID = ID;
         friends = new Profile[100];
+        leftNode = null;
+        rightNode = null;
     }
 
+    public Profile(){
+        username = "random";
+        firstName = "randomfirst";
+        surname = "randomLast";
+        workplace = "dundee";
+        hometown = "dundee";
+        userID = 0123;
+        friends = new Profile[100];
+        leftNode = null;
+        rightNode = null;
+    }
     public String getUsername() {
         return username;
     }
