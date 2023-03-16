@@ -10,7 +10,7 @@ public class Profile {
     private int userID;
 
     public Profile() {
-        username = this.username;
+        friends = new Profile[100];
     }
 
     public String getUsername() {
