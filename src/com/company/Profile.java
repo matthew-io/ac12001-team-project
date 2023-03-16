@@ -10,7 +10,7 @@ public class Profile {
     private int userID;
 
     public Profile() {
-
+        username = this.username;
     }
 
     public String getUsername() {
