@@ -1,8 +1,6 @@
 import java.util.Scanner;
-/**
- * @author (Alexander Gordon)
- * 
- */
+
+
 public class Network
 {
     // instance variables
