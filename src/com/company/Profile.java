@@ -20,19 +20,19 @@ public class Profile {
         workplace = WorkPlace;
         hometown = HomeTown;
         userID = ID;
-        friends = new Profile[100];
+        int[] freinds; //array of user IDs
         leftNode = null;
         rightNode = null;
     }
 
     public Profile(){
-        username = "random";
-        firstName = "randomfirst";
-        surname = "randomLast";
-        workplace = "dundee";
-        hometown = "dundee";
-        userID = 0123;
-        friends = new Profile[100];
+        username = "username";
+        firstName = "firstname";
+        surname = "surname";
+        workplace = "workplace";
+        hometown = "hometown";
+        userID = 0;
+        int[] freinds;; //array of userIDs
         leftNode = null;
         rightNode = null;
     }

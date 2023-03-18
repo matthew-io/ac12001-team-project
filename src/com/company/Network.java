@@ -1,262 +1,226 @@
+package com.company;
 import java.util.Scanner;
 
-
-public class Network
-{
+public class Network {
     // instance variables
-    public Profile Root;
-    public int total;
-    public Profile lowestNode;
-    public Profile parentLowestNode;
-    
+    Node root;
+    int totalProfiles;
+
     /**
      * Constructor for objects of class Tree
      */
-    public Network()
-    {
-        // initialise instance variables
-        Profile Root;
-        total = 0;
-        
+    Network() { totalProfiles = 0;
     }
 
-    
-    /** this allows me to create the tree without having to enter values every time I load the program */   
-    public void addNodeNoInput(int x , String y , double z)
-    {
-        Profile NewNode = new Profile(); //makes the Node and populates it
-        
-        if(Root == null){Root = NewNode;}
-        
-        else{
-            
-            Profile currentNode = Root;
-            
-            Profile ParentNode;
-            
-            
-            
-            while(true)
-            {   
-                ParentNode = currentNode;
-                //incert into tree left
-                if(NewNode.getUserID() < currentNode.getUserID())
-                {
-                    currentNode = currentNode.LeftNode;
-                    if(currentNode == null)
-                    {
-                        ParentNode.LeftNode = NewNode;
-                        return;
-                    }
+    /**
+     * Author : Drew
+     *
+     * @param node //node is the new profile being added to tree
+     */
+    public void addNode(Node node) {
+        Node newNode = node;
+        Node currentNode = root;
+        Node previousNode = null;
+
+        if (root == null) {
+            root = newNode;
+        } else {
+
+            while (currentNode != null) {
+
+                previousNode = currentNode;
+                if (newNode.p.getUserID() < currentNode.p.getUserID()) {
+                    currentNode = currentNode.left;
+                } else {
+                    currentNode = currentNode.right;
                 }
-                //incert into tree right
-                else
-                {
-                    currentNode = currentNode.RightNode;
-                
-                    if(currentNode == null)
-                    {
-                        ParentNode.RightNode = NewNode;
-                        return;
-                    
-                    }
-                
-                
-                }
-            
-            
+            }
+
+            if (newNode.p.getUserID() < previousNode.p.getUserID()) {
+                previousNode.left = newNode;
+            } else {
+                previousNode.right = newNode;
             }
         }
-        
-        
-        
     }
-    
-    
-    
-    /** adding a node from user input with validation */
-    public void addNode()//, int y, int z)
+
+    /**
+     * Auther : Drew
+     *
+     * @param node //node is starting point to traverse from
+     */
+    public void traverseTree(Node node) {
+        if (node != null) {
+            traverseTree(node.left);
+            System.out.print(" " + node.p.getUserID() + ": " + node.p.getUsername());
+            traverseTree(node.right);
+        }
+    }
+
+    public int countTotalProfiles(Node node) {
+        if (node == null) {
+            return 0;
+        } else {
+            return 1 + countTotalProfiles(node.left) + countTotalProfiles(node.right);
+        }
+    }
+
+    /**
+     * this allows me to create the tree without having to enter values every time I load the program
+     */
+    public void addNodeNoInput() {
+        Node newNode = new Node(new Profile());
+        newNode.p.setUserID(countTotalProfiles(root)+1);
+        Node currentNode = root;
+        Node previousNode = null;
+
+        if (root == null) {
+            root = newNode;
+        } else {
+
+            while (currentNode != null) {
+
+                previousNode = currentNode;
+                if (newNode.p.getUserID() < currentNode.p.getUserID()) {
+                    currentNode = currentNode.left;
+                } else {
+                    currentNode = currentNode.right;
+                }
+            }
+
+            if (newNode.p.getUserID() < previousNode.p.getUserID()) {
+                previousNode.left = newNode;
+            } else {
+                previousNode.right = newNode;
+            }
+        }
+    }
+
+    /**
+     * adding a node from user input with validation
+     */
+    public void addNodeWithInput()//, int y, int z)
     {
-        Profile newOne;
-        
-        
         //values that will be put into the node when the user finishes input
-        
+
         String username = "null";
         String firstName = "null";
         String surname = "null";
         String workplace = "null";
         String hometown = "null";
         int userID = 0;
-        
-        
-        
-        
+
+
         //getting value for string data
-        while(true)
-        {
+        while (true) {
             System.out.println("Enter your user name");
             Scanner scStr = new Scanner(System.in);
-            if(scStr.hasNext("[A-Za-z]*")) {
+            if (scStr.hasNext("[A-Za-z]*")) {
                 username = scStr.next();
                 break;
-                 
-            }else {
+
+            } else {
                 System.out.println("Please Enter a Valid Name");
             }
         }
-        
-        
+
+
         //getting value for string data
-        while(true)
-        {
+        while (true) {
             System.out.println("Enter your fisrt name");
             Scanner scStr = new Scanner(System.in);
-            if(scStr.hasNext("[A-Za-z]*")) {
+            if (scStr.hasNext("[A-Za-z]*")) {
                 firstName = scStr.next();
                 break;
-                 
-            }else {
+
+            } else {
                 System.out.println("Please Enter a Valid Name");
             }
         }
-        
+
         //getting value for string data
-        while(true)
-        {
+        while (true) {
             System.out.println("Enter your surname name");
             Scanner scStr = new Scanner(System.in);
-            if(scStr.hasNext("[A-Za-z]*")) {
+            if (scStr.hasNext("[A-Za-z]*")) {
                 surname = scStr.next();
                 break;
-                 
-            }else {
+
+            } else {
                 System.out.println("Please Enter a Valid Name");
             }
         }
-        
+
         //getting value for string data
-        while(true)
-        {
+        while (true) {
             System.out.println("Enter your workplace");
             Scanner scStr = new Scanner(System.in);
-            if(scStr.hasNext("[A-Za-z]*")) {
+            if (scStr.hasNext("[A-Za-z]*")) {
                 workplace = scStr.next();
                 break;
-                 
-            }else {
+
+            } else {
                 System.out.println("Please Enter a Valid Name");
             }
         }
-        
+
         //getting value for string data
-        while(true)
-        {
+        while (true) {
             System.out.println("Enter your hometown");
             Scanner scStr = new Scanner(System.in);
-            if(scStr.hasNext("[A-Za-z]*")) {
+            if (scStr.hasNext("[A-Za-z]*")) {
                 hometown = scStr.next();
                 break;
-                 
-            }else {
+
+            } else {
                 System.out.println("Please Enter a Valid Name");
             }
         }
-        
-        
-        
-        //getting value for integer data 
-        while(true)
-        {
-            System.out.println("Enter Product userID");
-            Scanner scStr = new Scanner(System.in);
-            if(scStr.hasNextInt()) {
-                userID = scStr.nextInt(); 
-                break;
-                 
-            }else {
-                System.out.println("Please Enter a Valid ID");
-            }
-        }
-        
-        
-    
-        /** instead of the user entering the id just add one to the number of users*/
-        
-        
-        
-        
-        
-        if(doesItemExist(ID) == false){
-            TreeNode NewNode = new TreeNode(ID , Name , Cost);
-            
-            if(Root == null){Root = NewNode;}
-            
-            else{
-                
-                TreeNode currentNode = Root;
-                
-                TreeNode ParentNode;
-                
-                
-                
-                while(true)
-                {   
-                    ParentNode = currentNode;
-                    //incert into tree left
-                    if(NewNode.GetID() < currentNode.GetID())
-                    {
-                        currentNode = currentNode.LeftNode;
-                        if(currentNode == null)
-                        {//right
-                            ParentNode.LeftNode = NewNode;
-                            return;
-                        }
-                    }
-                    //incert into tree right
-                    else
-                    {
-                    currentNode = currentNode.RightNode;
-                    
-                    if(currentNode == null)
-                    {
-                        ParentNode.RightNode = NewNode;
-                        return;
-                    
-                    }
-                    
-                    
-                    }
-                
-                
+
+        userID = countTotalProfiles(root)+1;
+
+        Node newNode = new Node(new Profile(username, firstName, surname, workplace, hometown, userID));
+        Node currentNode = root;
+        Node previousNode = null;
+
+
+        if (root == null) {
+            root = newNode;
+        } else {
+
+            while (currentNode != null) {
+
+                previousNode = currentNode;
+                if (newNode.p.getUserID() < currentNode.p.getUserID()) {
+                    currentNode = currentNode.left;
+                } else {
+                    currentNode = currentNode.right;
                 }
             }
+
+            if (newNode.p.getUserID() < previousNode.p.getUserID()) {
+                previousNode.left = newNode;
+            } else {
+                previousNode.right = newNode;
+            }
         }
-        
-        else{System.out.println("item already exists");}
-        
-        
-        
-        
     }
-    
-    
-    /** traverses the tree and prints it out in order */
-    public void printInOrderTree(Profile currentNode)
-    {
-        
-        
-        if(currentNode != null)
-        {
-            printInOrderTree(currentNode.LeftNode);
-            
-            System.out.println("ID = " + currentNode.getUserID() + "   Item name = " + currentNode.getUsername() + "  Full name = " + currentNode.getFirstName() + " " + currentNode.getSurname());
-            
-            printInOrderTree(currentNode.RightNode);
+
+    /**
+     * traverses the tree and prints it out in order
+     */
+    public void printInOrderTree(Node node) {
+        Node currentNode = root;
+
+        if (currentNode != null) {
+            printInOrderTree(currentNode.left);
+
+            System.out.println("ID = " + currentNode.p.getUserID() + "   Item name = " + currentNode.p.getUsername() + "  Full name = " + currentNode.p.getFirstName() + " " + currentNode.p.getSurname());
+
+            printInOrderTree(currentNode.left);
         }
-        
-        
     }
+}
     
     /** calculates total cost by going through the tree and totaling the data each time */
     /**
@@ -279,10 +243,8 @@ public class Network
         return total;
     }
     */
-    
-    
-    
     /** finds the lowest value of the rightNode to replace the node with 2 branches */
+    /**
     public void findLowestNode(Profile currentNode)
     {
         
@@ -299,10 +261,9 @@ public class Network
         
         
     }
-    
-    
-    
+
     /** finds the lowest values parentNode of the rightNode to replace the node with 2 branches */
+    /**
     public void findParentLowestNode(Profile currentNode)
     {   Profile node = currentNode;
         
@@ -317,9 +278,9 @@ public class Network
             
         }
     }
-    
-    
+
     /** this is a binary search for the tree */
+    /**
     public void findItem(int FindID)
     {
         
@@ -349,10 +310,10 @@ public class Network
     
     }
     
-    
     /** a binary seach but if it cant find the item then it returns false 
     * this was created for the delete method
     */
+    /**
     public boolean doesItemExist(int FindID)
     {
         boolean doesIt = false;
@@ -381,12 +342,6 @@ public class Network
         return doesIt;
     }
 
-  
-    
-    
-    
-    
-    
     public void deleteItem(int FindID)
     {   
         
@@ -557,5 +512,5 @@ public class Network
     
     }
 }
-
 }
+*/
