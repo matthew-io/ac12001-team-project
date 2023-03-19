@@ -73,21 +73,12 @@ public class Network {
             traverseTree(p.right);
         }
     }
-
-    public int countTotalProfiles(Profile p) {
-        if (p == null) {
-            return 0;
-        } else {
-            return 1 + countTotalProfiles(p.left) + countTotalProfiles(p.right);
-        }
-    }
-
-    /**
+        /**
      * this allows me to create the tree without having to enter values every time I load the program
      */
     public void addNodeNoInput() {
         Profile newNode = new Profile();
-        newNode.setUserID(countTotalProfiles(root) + 1);
+        newNode.setUserID(getTotalProfiles() + 1);
         Profile currentNode = root;
         Profile previousNode = null;
 
@@ -200,7 +191,7 @@ public class Network {
             }
         }
 
-        userID = countTotalProfiles(root) + 1;
+        userID = getTotalProfiles() + 1;
 
         Profile newNode = new Profile(username, firstName, surname, workplace, hometown, userID);
         Profile currentNode = root;
