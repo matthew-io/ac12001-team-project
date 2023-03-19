@@ -4,7 +4,7 @@ public class Profile {
     private String username;
     private String firstName;
     private String surname;
-    private Profile[] friends;
+    private int[] friends = {0};
     private String workplace;
     private String hometown;
     private Profile rightNode;
@@ -22,7 +22,7 @@ public class Profile {
         workplace = WorkPlace;
         hometown = HomeTown;
         userID = ID;
-        int[] freinds; //array of user IDs
+
         left = right = null;
     }
 
@@ -33,10 +33,36 @@ public class Profile {
         workplace = "workplace";
         hometown = "hometown";
         userID = 0;
-        int[] freinds;; //array of userIDs
+
         left = right = null;
     }
 
+    public void addFriend(int newFriendID) {
+
+        if (friends[0] == 0)
+        {
+            friends[0] = newFriendID;
+            return;
+        }
+
+        for (int i = 0; i < friends.length; i++) {
+            if (friends[i] == newFriendID) {
+                System.out.println("Already freinds with this guy");
+                newFriendID = -1;
+                break;
+            }
+        }
+        if (newFriendID <= 0) {
+            System.out.println("CANNOT ADD!!!");
+        } else {
+            int[] tempArray = new int[friends.length + 1];
+            for (int i = 0; i < friends.length; i++) {
+                tempArray[i] = friends[i];
+            }
+            tempArray[friends.length] = newFriendID;
+            friends = tempArray;
+        }
+    }
     public String getUsername() {
         return username;
     }
@@ -49,6 +75,10 @@ public class Profile {
         return firstName;
     }
 
+    public int[] getFriends() {
+        return friends;
+    }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -59,14 +89,6 @@ public class Profile {
 
     public void setSurname(String surname) {
         this.surname = surname;
-    }
-
-    public Profile[] getFriends() {
-        return friends;
-    }
-
-    public void setFriends(Profile[] friends) {
-        this.friends = friends;
     }
 
     public String getWorkplace() {

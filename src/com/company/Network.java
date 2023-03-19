@@ -1,4 +1,7 @@
 package com.company;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Network {
@@ -21,7 +24,97 @@ public class Network {
         this.totalProfiles = totalProfiles;
     }
 
-    public void add1toTotal() {totalProfiles+=1;}
+    public void add1toTotal() {
+        totalProfiles += 1;
+    }
+
+    public Profile findNode(int userID) {
+        int nodeToFind = userID;
+        Profile currentNode = root;
+        boolean found = false;
+
+        while (!found) {
+            if (currentNode == null) {
+                System.out.println("USER NOT FOUND");
+                return null;
+
+            } else if (currentNode.getUserID() == nodeToFind) {
+                //System.out.println("Found user: " + currentNode.getUsername());
+                break;
+
+            } else if (currentNode.getUserID() != nodeToFind) {
+                if (currentNode.getUserID() < nodeToFind) {
+                    currentNode = currentNode.right;
+                } else {
+                    currentNode = currentNode.left;
+                }
+            }
+        }
+        return (currentNode);
+    }
+
+    public void updateNode(Profile p) {
+        int nodeToFind = p.getUserID();
+        Profile currentNode = root;
+        boolean found = false;
+
+        while (!found) {
+            if (currentNode == null) {
+                System.out.println("USER NOT FOUND");
+                break;
+
+            } else if (currentNode.getUserID() == nodeToFind) {
+               // System.out.println("Found user: " + currentNode.getUsername());
+                currentNode = p;
+                break;
+
+            } else if (currentNode.getUserID() != nodeToFind) {
+                if (currentNode.getUserID() < nodeToFind) {
+                    currentNode = currentNode.right;
+                } else {
+                    currentNode = currentNode.left;
+                }
+            }
+        }
+    }
+    public void addFriends(int userID1, int userID2)
+    {
+        Profile p1 = findNode(userID1);
+        Profile p2 = findNode(userID2);
+
+        p1.addFriend(userID2);
+        p2.addFriend(userID1);
+
+    }
+    public void compareFriends(int userID1, int userID2)
+    {
+        Profile p1 = findNode(userID1);
+        Profile p2 = findNode(userID2);
+        List<Integer> commonFriends = new ArrayList<>();
+
+        if (p1 == null) {
+            System.out.println("First ID invalid!");
+            return; // exit the function if p1 is null
+        }
+
+        if (p2 == null) {
+            System.out.println("Second ID invalid!");
+            return; // exit the function if p2 is null
+        }
+
+        for (int i = 0; i < p1.getFriends().length; i++)
+        {
+            for (int x = 0; x < p2.getFriends().length; x++)
+            {
+                if (p1.getFriends()[i] == p2.getFriends()[x])
+                {
+                    Profile common = findNode(p1.getFriends()[i]);
+                    commonFriends.add(common.getUserID());
+                }
+            }
+        }
+        System.out.println(commonFriends);
+    }
 
     /**
      * Author : Drew
