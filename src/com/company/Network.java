@@ -3,43 +3,60 @@ import java.util.Scanner;
 
 public class Network {
     // instance variables
-    Node root;
+    Profile root;
     int totalProfiles;
 
     /**
      * Constructor for objects of class Tree
      */
-    Network() { totalProfiles = 0;
+    Network() {
+        totalProfiles = 0;
     }
+
+    public int getTotalProfiles() {
+        return totalProfiles;
+    }
+
+    public void setTotalProfiles(int totalProfiles) {
+        this.totalProfiles = totalProfiles;
+    }
+
+    public void add1toTotal() {totalProfiles+=1;}
 
     /**
      * Author : Drew
      *
-     * @param node //node is the new profile being added to tree
+     * @param p //node is the new profile being added to tree
      */
-    public void addNode(Node node) {
-        Node newNode = node;
-        Node currentNode = root;
-        Node previousNode = null;
+    public void addNode(Profile p) {
+        Profile newNode = p;
+        Profile currentNode = root;
+        Profile previousNode = null;
 
         if (root == null) {
+
+            add1toTotal();
             root = newNode;
         } else {
 
             while (currentNode != null) {
 
                 previousNode = currentNode;
-                if (newNode.p.getUserID() < currentNode.p.getUserID()) {
+                if (newNode.getUserID() < currentNode.getUserID()) {
                     currentNode = currentNode.left;
                 } else {
                     currentNode = currentNode.right;
                 }
             }
 
-            if (newNode.p.getUserID() < previousNode.p.getUserID()) {
+            if (newNode.getUserID() < previousNode.getUserID()) {
+                add1toTotal();
                 previousNode.left = newNode;
             } else {
+
+                add1toTotal();
                 previousNode.right = newNode;
+
             }
         }
     }
@@ -47,21 +64,21 @@ public class Network {
     /**
      * Auther : Drew
      *
-     * @param node //node is starting point to traverse from
+     * @param p //node is starting point to traverse from
      */
-    public void traverseTree(Node node) {
-        if (node != null) {
-            traverseTree(node.left);
-            System.out.print(" " + node.p.getUserID() + ": " + node.p.getUsername());
-            traverseTree(node.right);
+    public void traverseTree(Profile p) {
+        if (p != null) {
+            traverseTree(p.left);
+            System.out.print(" " + p.getUserID() + ": " + p.getUsername());
+            traverseTree(p.right);
         }
     }
 
-    public int countTotalProfiles(Node node) {
-        if (node == null) {
+    public int countTotalProfiles(Profile p) {
+        if (p == null) {
             return 0;
         } else {
-            return 1 + countTotalProfiles(node.left) + countTotalProfiles(node.right);
+            return 1 + countTotalProfiles(p.left) + countTotalProfiles(p.right);
         }
     }
 
@@ -69,10 +86,10 @@ public class Network {
      * this allows me to create the tree without having to enter values every time I load the program
      */
     public void addNodeNoInput() {
-        Node newNode = new Node(new Profile());
-        newNode.p.setUserID(countTotalProfiles(root)+1);
-        Node currentNode = root;
-        Node previousNode = null;
+        Profile newNode = new Profile();
+        newNode.setUserID(countTotalProfiles(root) + 1);
+        Profile currentNode = root;
+        Profile previousNode = null;
 
         if (root == null) {
             root = newNode;
@@ -81,17 +98,23 @@ public class Network {
             while (currentNode != null) {
 
                 previousNode = currentNode;
-                if (newNode.p.getUserID() < currentNode.p.getUserID()) {
+                if (newNode.getUserID() < currentNode.getUserID()) {
                     currentNode = currentNode.left;
                 } else {
                     currentNode = currentNode.right;
                 }
             }
 
-            if (newNode.p.getUserID() < previousNode.p.getUserID()) {
+            if (newNode.getUserID() < previousNode.getUserID()) {
+
+                add1toTotal();
                 previousNode.left = newNode;
+
             } else {
+
+                add1toTotal();
                 previousNode.right = newNode;
+
             }
         }
     }
@@ -177,11 +200,11 @@ public class Network {
             }
         }
 
-        userID = countTotalProfiles(root)+1;
+        userID = countTotalProfiles(root) + 1;
 
-        Node newNode = new Node(new Profile(username, firstName, surname, workplace, hometown, userID));
-        Node currentNode = root;
-        Node previousNode = null;
+        Profile newNode = new Profile(username, firstName, surname, workplace, hometown, userID);
+        Profile currentNode = root;
+        Profile previousNode = null;
 
 
         if (root == null) {
@@ -191,37 +214,25 @@ public class Network {
             while (currentNode != null) {
 
                 previousNode = currentNode;
-                if (newNode.p.getUserID() < currentNode.p.getUserID()) {
+                if (newNode.getUserID() < currentNode.getUserID()) {
                     currentNode = currentNode.left;
                 } else {
                     currentNode = currentNode.right;
                 }
             }
 
-            if (newNode.p.getUserID() < previousNode.p.getUserID()) {
+            if (newNode.getUserID() < previousNode.getUserID()) {
+                add1toTotal();
                 previousNode.left = newNode;
+
             } else {
+                add1toTotal();
                 previousNode.right = newNode;
+
             }
         }
     }
-
-    /**
-     * traverses the tree and prints it out in order
-     */
-    public void printInOrderTree(Node node) {
-        Node currentNode = root;
-
-        if (currentNode != null) {
-            printInOrderTree(currentNode.left);
-
-            System.out.println("ID = " + currentNode.p.getUserID() + "   Item name = " + currentNode.p.getUsername() + "  Full name = " + currentNode.p.getFirstName() + " " + currentNode.p.getSurname());
-
-            printInOrderTree(currentNode.left);
-        }
-    }
 }
-    
     /** calculates total cost by going through the tree and totaling the data each time */
     /**
     public int totalCost(Profile currentNode)

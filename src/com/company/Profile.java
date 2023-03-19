@@ -11,6 +11,8 @@ public class Profile {
     private Profile leftNode;
     private int userID;
 
+    Profile left, right;
+
 
     public Profile(String UserName , String NameOne , String NameTwo, String WorkPlace , String HomeTown , int ID)
     {
@@ -21,8 +23,7 @@ public class Profile {
         hometown = HomeTown;
         userID = ID;
         int[] freinds; //array of user IDs
-        leftNode = null;
-        rightNode = null;
+        left = right = null;
     }
 
     public Profile(){
@@ -33,8 +34,7 @@ public class Profile {
         hometown = "hometown";
         userID = 0;
         int[] freinds;; //array of userIDs
-        leftNode = null;
-        rightNode = null;
+        left = right = null;
     }
 
     public String getUsername() {
