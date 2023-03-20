@@ -14,8 +14,6 @@ public class Main {
         network.addNode(new Profile("Lady_Boy1", "Timmy", "Tam", "Student", "Dundee", network.getTotalProfiles()+1));
         network.addNode(new Profile("GOAT", "Digsby", "Brown", "Student", "Dundee", network.getTotalProfiles()+1));
         network.addNode(new Profile("xXGr1ffXx", "Peter", "Griffin", "Aldi", "Dundee", network.getTotalProfiles()+1));
-        //network.addNodeWithInput();
-        //network.addNodeNoInput();
 
         network.traverseTree(network.root);
 
@@ -27,8 +25,6 @@ public class Main {
         network.addFriends(2,3);
         network.addFriends(2,4);
 
-        System.out.println(Arrays.toString(network.findNode(1).getFriends()));
-
-        network.compareFriends(1,2);
+        network.displayFriendsOfFriend(1);
     }
 }

@@ -16,6 +16,45 @@ public class Network {
         totalProfiles = 0;
     }
 
+    public void displayFriendsOfFriend(int userID)
+    {
+        Scanner s = new Scanner(System.in);
+        Profile p = findNode(userID);
+        displayFriends(p.getUserID());
+
+        System.out.println("Enter the username of the profile youd like to view the friends of :");
+        String search = s.nextLine();
+        int friendID = 0;
+
+        for (int i = 0; i < p.getFriends().length; i++)
+        {
+            Profile friend = findNode(p.getFriends()[i]);
+            if (friend.getUsername().equals(search))
+            {
+                friendID = friend.getUserID();
+            }
+        }
+
+        if (friendID == 0)
+        {
+            System.out.println(p.getUsername() + " is not friends with " + search);
+        }
+
+        else {
+            displayFriends(friendID);
+        }
+
+    }
+    public void displayFriends(int userID) {
+        System.out.println("");
+        Profile p = findNode(userID);
+
+        for (int i = 0; i < p.getFriends().length; i++)
+        {
+            Profile friend = findNode(p.getFriends()[i]);
+            System.out.println(friend.getUsername() + ": " + friend.getFirstName() + " " + friend.getSurname());
+        }
+    }
     public int getTotalProfiles() {
         return totalProfiles;
     }
