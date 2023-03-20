@@ -15,7 +15,7 @@ public class Main {
         //add nodes of profiles to tree
         network.addNode(new Profile("BIGWEB", "Drew", "Webster", "Student", "Dundee", network.getTotalProfiles() + 1));
         network.addNode(new Profile("Jonny03", "John", "Diggs", "Student", "Dundee", network.getTotalProfiles() + 1));
-        network.addNode(new Profile("Lady_Boy1", "Timmy", "Tam", "Student", "Dundee", network.getTotalProfiles() + 1));
+        network.addNode(new Profile("Lady_Boy1", "Timmy", "Tam", "Aldi", "Dundee", network.getTotalProfiles() + 1));
         network.addNode(new Profile("GOAT", "Digsby", "Brown", "Student", "Dundee", network.getTotalProfiles() + 1));
         network.addNode(new Profile("xXGr1ffXx", "Peter", "Griffin", "Aldi", "Dundee", network.getTotalProfiles() + 1));
 
@@ -48,6 +48,11 @@ public class Main {
             }
         }
 
-        network.findNode(userID).display();
+        network.addFriends(userID, 3);
+        network.addFriends(userID, 3);
+        network.addFriends(userID, 4);
+        network.addFriends(userID, 5);
+
+        network.displayFriends(userID);
     }
 }

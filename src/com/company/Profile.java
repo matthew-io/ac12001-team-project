@@ -46,6 +46,11 @@ public class Profile {
     }
     public void addFriend(int newFriendID) {
 
+        if (newFriendID == this.userID)
+        {
+            System.out.println("Cant add youself");
+            return;
+        }
         if (friends[0] == 0)
         {
             friends[0] = newFriendID;
@@ -56,14 +61,18 @@ public class Profile {
             if (friends[i] == newFriendID) {
                 System.out.println("Already freinds with this guy");
                 newFriendID = -1;
-                break;
+                return;
             }
         }
         if (newFriendID <= 0) {
             System.out.println("CANNOT ADD!!!");
-        } else {
+        }
+
+        else
+        {
             int[] tempArray = new int[friends.length + 1];
-            for (int i = 0; i < friends.length; i++) {
+            for (int i = 0; i < friends.length; i++)
+            {
                 tempArray[i] = friends[i];
             }
             tempArray[friends.length] = newFriendID;
