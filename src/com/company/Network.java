@@ -58,11 +58,6 @@ public class Network {
     public int getTotalProfiles() {
         return totalProfiles;
     }
-
-    public void setTotalProfiles(int totalProfiles) {
-        this.totalProfiles = totalProfiles;
-    }
-
     public void add1toTotal() {
         totalProfiles += 1;
     }
