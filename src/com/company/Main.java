@@ -12,7 +12,7 @@ public class Main {
         int input;
         int userID;
 
-        //add nodes of students to tree
+        //add nodes of profiles to tree
         network.addNode(new Profile("BIGWEB", "Drew", "Webster", "Student", "Dundee", network.getTotalProfiles() + 1));
         network.addNode(new Profile("Jonny03", "John", "Diggs", "Student", "Dundee", network.getTotalProfiles() + 1));
         network.addNode(new Profile("Lady_Boy1", "Timmy", "Tam", "Student", "Dundee", network.getTotalProfiles() + 1));
@@ -24,11 +24,14 @@ public class Main {
         while (true) {
             System.out.println("Enter the ID of your profile or type 0 to create a new profile :");
             input = s.nextInt();
-            if (input == 0) {
+
+            if (input == 0)
+            {
                 userID = network.getTotalProfiles() + 1;
                 network.addNodeWithInput();
                 break;
             }
+
             else
             {
                 if (network.findNode(input) != null)
@@ -37,6 +40,7 @@ public class Main {
                     System.out.println("Welcome back " + network.findNode(userID).getFirstName());
                     break;
                 }
+
                 else
                 {
                     System.out.println("COULD NOT FIND USER TRY AGAIN");
@@ -44,16 +48,6 @@ public class Main {
             }
         }
 
-        network.traverseTree(network.root);
-
-        network.addFriends(1,2);
-        network.addFriends(1,3);
-        network.addFriends(1,4);
-        network.addFriends(1,5);
-
-        network.addFriends(2,3);
-        network.addFriends(2,4);
-
-        network.displayFriendsOfFriend(1);
+        network.findNode(userID).display();
     }
 }

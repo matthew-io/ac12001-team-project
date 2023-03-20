@@ -37,6 +37,13 @@ public class Profile {
         left = right = null;
     }
 
+    public void display()
+    {
+        System.out.println(userID);
+        System.out.println(username);
+        System.out.println(firstName);
+        System.out.println(surname);
+    }
     public void addFriend(int newFriendID) {
 
         if (friends[0] == 0)
