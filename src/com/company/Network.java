@@ -44,11 +44,47 @@ public class Network {
             displayFriends(friendID);
         }
 
+        System.out.println("would you like to add any of the profiles as friends (Y or N): ");
+        String input = s.nextLine();
+
+        while(true) {
+
+
+            if (input.equals("Y")) {
+                p = findNode(friendID);
+
+                friendID = 0;
+
+                System.out.println("Enter the username of the profile youd like to add :");
+                search = s.nextLine();
+
+                for (int i = 0; i < p.getFriends().length; i++) {
+                    Profile friend = findNode(p.getFriends()[i]);
+                    if (friend.getUsername().equals(search)) {
+                        friendID = friend.getUserID();
+                    }
+                }
+
+                if (friendID == 0)
+                {
+                    System.out.println(p.getUsername() + " is not friends with " + search);
+                }
+                else
+                {
+                    addFriends(userID,friendID);
+                }
+
+                System.out.println("would you like to add another (Y or N): ");
+                input = s.nextLine();
+                if (input.equals("Y")){}
+                else {break;}
+            }
+        }
     }
 
     public void filterFreinds(int userID)
     {
-        Profile user = findNode(userID);
+        Profile p = findNode(userID);
         System.out.println("1: Surname, 2: Workplace, 3: Hometown");
         System.out.println("Filter by same : ");
         Scanner s = new Scanner(System.in);
@@ -70,10 +106,10 @@ public class Network {
         {
             case 1:
                 //same surname
-                for (int i = 0; i < user.getFriends().length; i++)
+                for (int i = 0; i < p.getFriends().length; i++)
                 {
-                    Profile friend = findNode(user.getFriends()[i]);
-                    if(friend.getSurname().equals(user.getSurname()))
+                    Profile friend = findNode(p.getFriends()[i]);
+                    if(friend.getSurname().equals(p.getSurname()))
                     {
                         System.out.println(friend.getUsername());
                     }
@@ -81,10 +117,10 @@ public class Network {
                 break;
             case 2:
                 //same workplace
-                for (int i = 0; i < user.getFriends().length; i++)
+                for (int i = 0; i < p.getFriends().length; i++)
                 {
-                    Profile friend = findNode(user.getFriends()[i]);
-                    if(friend.getWorkplace().equals(user.getWorkplace()))
+                    Profile friend = findNode(p.getFriends()[i]);
+                    if(friend.getWorkplace().equals(p.getWorkplace()))
                     {
                        System.out.println(friend.getUsername());
                     }
@@ -92,16 +128,18 @@ public class Network {
                 break;
             case 3:
                 //same hometown
-                for (int i = 0; i < user.getFriends().length; i++)
+                for (int i = 0; i < p.getFriends().length; i++)
                 {
-                    Profile friend = findNode(user.getFriends()[i]);
-                    if(friend.getHometown().equals(user.getHometown()))
+                    Profile friend = findNode(p.getFriends()[i]);
+                    if(friend.getHometown().equals(p.getHometown()))
                     {
                         System.out.println(friend.getUsername());
                     }
                 }
                 break;
         }
+
+
     }
     public void displayFriends(int userID) {
         System.out.println("");

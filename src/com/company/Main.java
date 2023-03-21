@@ -48,11 +48,13 @@ public class Main {
             }
         }
 
-        network.addFriends(userID, 3);
-        network.addFriends(userID, 3);
-        network.addFriends(userID, 4);
-        network.addFriends(userID, 5);
+        network.addFriends(1, 2);
+        network.addFriends(2, 3);
+        network.addFriends(2, 4);
+        network.addFriends(2, 5);
 
-        network.displayFriends(userID);
+        network.displayFriendsOfFriend(1);
+
+        network.displayFriends(1);
     }
 }
