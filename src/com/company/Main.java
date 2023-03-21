@@ -49,12 +49,12 @@ public class Main {
         }
 
         network.addFriends(1, 2);
+        network.addFriends(1, 3);
+
         network.addFriends(2, 3);
         network.addFriends(2, 4);
         network.addFriends(2, 5);
 
-        network.displayFriendsOfFriend(1);
-
-        network.displayFriends(1);
+        network.friendsInCommon(1,2);
     }
 }

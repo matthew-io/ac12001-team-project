@@ -16,6 +16,25 @@ public class Network {
         totalProfiles = 0;
     }
 
+
+
+    public void friendsInCommon(int userID1, int userID2) {
+        Profile p1 = findNode(userID1);
+        Profile p2 = findNode(userID2);
+
+        for (int i = 0; i < p1.getFriends().length; i++)
+        {
+            for (int x = 0; x < p2.getFriends().length; x++)
+            {
+                if (p1.getFriends()[i] == p2.getFriends()[x])
+                {
+                    Profile commonFriend = findNode(p1.getFriends()[i]);
+                    System.out.println(commonFriend.getUsername());
+                }
+            }
+        }
+    }
+
     public void displayFriendsOfFriend(int userID)
     {
         Scanner s = new Scanner(System.in);
@@ -81,7 +100,6 @@ public class Network {
             }
         }
     }
-
     public void filterFreinds(int userID)
     {
         Profile p = findNode(userID);
