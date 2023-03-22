@@ -1,60 +1,182 @@
 package com.company;
 
+import com.sun.source.tree.NewArrayTree;
+
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     //test
     public static void main(String[] args) {
-        // create an object of BinaryTree
+//        // create an object of BinaryTree
+//        Network network = new Network();
+//        Scanner s = new Scanner(System.in);
+//        int input;
+//        int userID;
+//
+//        //add nodes of profiles to tree
+//        network.addNode(new Profile("BIGWEB", "Drew", "Webster", "Student", "Dundee", network.getTotalProfiles() + 1));
+//        network.addNode(new Profile("Jonny03", "John", "Diggs", "Student", "Dundee", network.getTotalProfiles() + 1));
+//        network.addNode(new Profile("Lady_Boy1", "Timmy", "Tam", "Aldi", "Dundee", network.getTotalProfiles() + 1));
+//        network.addNode(new Profile("GOAT", "Digsby", "Brown", "Student", "Dundee", network.getTotalProfiles() + 1));
+//        network.addNode(new Profile("xXGr1ffXx", "Peter", "Griffin", "Aldi", "Dundee", network.getTotalProfiles() + 1));
+//
+//
+//
+//
+//
+//        System.out.println("Welcome to social media");
+//
+//        while (true) {
+//            System.out.println("Enter the ID of your profile or type 0 to create a new profile :");
+//            input = s.nextInt();
+//
+//            if (input == 0)
+//            {
+//                userID = network.getTotalProfiles() + 1;
+//                network.addNodeWithInput();
+//                break;
+//            }
+//
+//            else
+//            {
+//                if (network.findNode(input) != null)
+//                {
+//                    userID = input;
+//                    System.out.println("Welcome back " + network.findNode(userID).getFirstName());
+//                    break;
+//                }
+//
+//                else
+//                {
+//                    System.out.println("COULD NOT FIND USER TRY AGAIN");
+//                }
+//            }
+//        }
+//
+//        network.addFriends(1, 2);
+//        network.addFriends(1, 3);
+//
+//        network.addFriends(2, 3);
+//        network.addFriends(2, 4);
+//        network.addFriends(2, 5);
+//
+//        network.friendsInCommon(1,2);
+        menu();
+    }
+
+    public static void menu() {
+        Scanner scan = new Scanner(System.in);
+        Boolean exit, validUser;
+        exit = validUser = false;
+        int userId, choice;
         Network network = new Network();
-        Scanner s = new Scanner(System.in);
-        int input;
-        int userID;
+        Profile p, x, y, z;
 
-        //add nodes of profiles to tree
-        network.addNode(new Profile("BIGWEB", "Drew", "Webster", "Student", "Dundee", network.getTotalProfiles() + 1));
-        network.addNode(new Profile("Jonny03", "John", "Diggs", "Student", "Dundee", network.getTotalProfiles() + 1));
-        network.addNode(new Profile("Lady_Boy1", "Timmy", "Tam", "Aldi", "Dundee", network.getTotalProfiles() + 1));
-        network.addNode(new Profile("GOAT", "Digsby", "Brown", "Student", "Dundee", network.getTotalProfiles() + 1));
-        network.addNode(new Profile("xXGr1ffXx", "Peter", "Griffin", "Aldi", "Dundee", network.getTotalProfiles() + 1));
+        network.addNode(p = new Profile());
+        network.addNode(x = new Profile("one", "Peter", "Griffin", "Aldi", "Dundee", network.getTotalProfiles() + 1));
+        network.addNode(y = new Profile("two", "James", "Griffin", "Aldi", "Dundee", network.getTotalProfiles() + 1));
+        network.addNode(z = new Profile("three", "Phil", "Griffin", "Aldi", "Dundee", network.getTotalProfiles() + 1));
 
-        System.out.println("Welcome to social media");
+        // LOGIN / ACCOUNT CREATION MENU
 
-        while (true) {
-            System.out.println("Enter the ID of your profile or type 0 to create a new profile :");
-            input = s.nextInt();
+        while (!exit) {
 
-            if (input == 0)
-            {
-                userID = network.getTotalProfiles() + 1;
-                network.addNodeWithInput();
-                break;
+            System.out.println("Welcome to the Social Network\nPlease choose an option from below: " +
+                    "\n1. Log in" +
+                    "\n2. Create an account" +
+                    "\n3. Exit");
+            choice = scan.nextInt();
+
+            switch(choice) {
+                case 1:
+                    while (!validUser) {
+                        try {
+                            System.out.println("Please enter your user ID: ");
+                            userId = scan.nextInt();
+                            if (network.findNode(userId) == null) {
+                                System.out.println("Could not find user");
+                            } else {
+                                p = network.findNode(userId);
+                                validUser = true;
+                                exit = true;
+                            }
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid character. Please enter again.");
+                            scan.next();
+                        }
+                    }
+                    break;
+                case 2:
+                    network.addNodeWithInput();
+                    break;
+                case 3:
+                    exit = true;
+                    break;
             }
 
-            else
-            {
-                if (network.findNode(input) != null)
-                {
-                    userID = input;
-                    System.out.println("Welcome back " + network.findNode(userID).getFirstName());
-                    break;
-                }
+            // MAIN MENU - DISPLAYS WHEN USER LOGS IN SUCCESSFULLY
 
-                else
-                {
-                    System.out.println("COULD NOT FIND USER TRY AGAIN");
+            if (validUser) {
+                System.out.println("Logged in successfully. Welcome " + p.getFirstName() + ".");
+                exit = false;
+                int friendId;
+
+                while(!exit && validUser) {
+                    Boolean friendAdded = false;
+
+                    System.out.println("Please choose an option from below: " +
+                            "\n1. Add friend" +
+                            "\n2. View friends" +
+                            "\n3. View friends of friend" +
+                            "\n4. View friends in common" +
+                            "\n5. Logout" +
+                            "\n6. Exit");
+                    choice = scan.nextInt();
+
+                    switch(choice) {
+                        case 1:
+                            while (!friendAdded) {
+                                try {
+                                    System.out.println("Enter the ID of the friend you would like to add: ");
+                                    friendId = scan.nextInt();
+                                    p.addFriend(friendId);
+                                    friendAdded = true;
+                                } catch(InputMismatchException e) {
+                                    System.out.println("Invalid character");
+                                    scan.next();
+                                }
+                            }
+                            break;
+                        case 2:
+                            network.displayFriends(p.getUserID());
+                            break;
+                        case 3:
+                            network.displayFriendsOfFriend(p.getUserID());
+                            break;
+                        case 4:
+                            Boolean foundFriend = false;
+                            while (!foundFriend)
+                                try {
+                                    System.out.println("Enter the ID of the friend you would like to find friends in common with: ");
+                                    friendId = scan.nextInt();
+                                    network.compareFriends(p.getUserID(), friendId);
+                                    foundFriend = true;
+                                } catch (InputMismatchException e) {
+                                    System.out.println("Invalid character");
+                                    scan.next();
+                                }
+                            break;
+                        case 5:
+                            validUser = false;
+                            break;
+                        case 6:
+                            exit = true;
+                            break;
+                    }
                 }
             }
         }
-
-        network.addFriends(1, 2);
-        network.addFriends(1, 3);
-
-        network.addFriends(2, 3);
-        network.addFriends(2, 4);
-        network.addFriends(2, 5);
-
-        network.friendsInCommon(1,2);
     }
 }
