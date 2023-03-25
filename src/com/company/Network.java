@@ -16,8 +16,6 @@ public class Network {
         totalProfiles = 0;
     }
 
-
-
     public void friendsInCommon(int userID1, int userID2) {
         Profile p1 = findNode(userID1);
         Profile p2 = findNode(userID2);
@@ -178,12 +176,14 @@ public class Network {
             }
         }
     }
+
     public int getTotalProfiles() {
         return totalProfiles;
     }
     public void add1toTotal() {
         totalProfiles += 1;
     }
+
     public Profile findNode(int userID) {
         int nodeToFind = userID;
         Profile currentNode = root;
@@ -191,7 +191,7 @@ public class Network {
 
         while (!found) {
             if (currentNode == null) {
-                System.out.println("USER NOT FOUND");
+//                System.out.println("USER NOT FOUND");
                 return null;
 
             } else if (currentNode.getUserID() == nodeToFind) {
@@ -208,6 +208,9 @@ public class Network {
         }
         return (currentNode);
     }
+
+
+
     public void updateNode(Profile p) {
         int nodeToFind = p.getUserID();
         Profile currentNode = root;
@@ -356,6 +359,7 @@ public class Network {
 
             }
         }
+
     }
 
     /**

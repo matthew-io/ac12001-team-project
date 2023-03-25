@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.company.LoginFrame">
+  <grid id="27dc6" binding="Main" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="1000" height="800"/>
+    </constraints>
+    <properties>
+      <background color="-4012613"/>
+      <maximumSize width="850" height="650"/>
+      <minimumSize width="850" height="650"/>
+      <preferredSize width="850" height="650"/>
+    </properties>
+    <clientProperties>
+      <html.disable class="java.lang.Boolean" value="false"/>
+    </clientProperties>
+    <border type="none"/>
+    <children>
+      <grid id="56e30" layout-manager="FlowLayout" hgap="5" vgap="20" flow-align="1">
+        <constraints border-constraint="South"/>
+        <properties>
+          <background color="-14935012"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <hspacer id="f5685">
+            <constraints/>
+          </hspacer>
+          <component id="ac5e3" class="javax.swing.JButton" binding="createAccountButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <background color="-14935012"/>
+              <borderPainted value="false"/>
+              <font name="Century Gothic" style="1"/>
+              <foreground color="-9538956"/>
+              <hideActionText value="false"/>
+              <text value="Don't have an account? Create one here"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="fe8fc" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="Center"/>
+        <properties>
+          <background color="-4012613"/>
+          <foreground color="-4012613"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="ff8de" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints border-constraint="Center"/>
+            <properties>
+              <background color="-3844280"/>
+              <foreground color="-14935012"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="35c86" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1973791"/>
+                  <font name="Century Gothic" size="28" style="1"/>
+                  <foreground color="-1973791"/>
+                  <icon value="com/company/images/globe.png"/>
+                  <text value="THE SOCIAL NETWORK&#10;"/>
+                </properties>
+              </component>
+              <grid id="9382d" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="20" left="20" bottom="0" right="20"/>
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-657931"/>
+                  <foreground color="-1"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <grid id="523ac" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="5" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-657931"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="2f676" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <background color="-12237499"/>
+                          <font name="Century Gothic" size="18" style="1"/>
+                          <foreground color="-12237499"/>
+                          <horizontalAlignment value="2"/>
+                          <horizontalTextPosition value="2"/>
+                          <text value="Enter your ID:"/>
+                        </properties>
+                      </component>
+                      <component id="4a57f" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+                        <constraints/>
+                        <properties>
+                          <background color="-657931"/>
+                          <columns value="20"/>
+                          <font name="Century Gothic" size="20" style="1"/>
+                          <foreground color="-14935012"/>
+                          <horizontalAlignment value="2"/>
+                          <opaque value="false"/>
+                          <text value=""/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <component id="f20a3" class="javax.swing.JButton" binding="logInButton" default-binding="true">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-1"/>
+                      <font name="Century Gothic" style="1"/>
+                      <foreground color="-10065557"/>
+                      <text value="Log In"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+            </children>
+          </grid>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
