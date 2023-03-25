@@ -23,8 +23,6 @@ public class LoginFrame implements ActionListener {
         frame.setContentPane(new LoginFrame(network).Main);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-
-
         frame.setVisible(true);
     }
 
@@ -34,7 +32,7 @@ public class LoginFrame implements ActionListener {
             try {
                 int userId = Integer.parseInt(textField1.getText());
                 if (network.findNode(userId) == null) {
-                    JOptionPane.showMessageDialog(Main, "Invalid user ID");
+                    JOptionPane.showMessageDialog(Main, "User does not exist");
                     textField1.setText("");
                 } else {
                     p = network.findNode(userId);
@@ -45,7 +43,8 @@ public class LoginFrame implements ActionListener {
                     profileFrame.displayFrame();
                 }
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(Main, "Invalid user ID");
+                JOptionPane.showMessageDialog(Main, "User ID must be a number.");
+                textField1.setText("");
             }
         }
     }
