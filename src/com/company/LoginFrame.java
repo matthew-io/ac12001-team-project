@@ -37,15 +37,20 @@ public class LoginFrame implements ActionListener {
                 } else {
                     p = network.findNode(userId);
                     JOptionPane.showMessageDialog(Main, "Logged in successfully.");
-                    ProfileFrame profileFrame = new ProfileFrame(p);
+                    Home home = new Home(network, p);
                     JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(Main);
                     frame.dispose();
-                    profileFrame.displayFrame();
+                    home.displayFrame();
                 }
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(Main, "User ID must be a number.");
                 textField1.setText("");
             }
         }
+        if (e.getSource() == createAccountButton) {
+            CreateAccount createAccount = new CreateAccount(network);
+            createAccount.displayFrame();
+        }
+
     }
 }

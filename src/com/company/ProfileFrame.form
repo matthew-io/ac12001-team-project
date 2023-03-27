@@ -39,17 +39,13 @@
               <verticalTextPosition value="0"/>
             </properties>
           </component>
-          <component id="a56ad" class="javax.swing.JButton" binding="editProfileButton" default-binding="true">
+          <component id="f19ab" class="javax.swing.JLabel">
             <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-1"/>
-              <font name="Century Gothic"/>
-              <foreground color="-9538956"/>
-              <horizontalAlignment value="0"/>
-              <horizontalTextPosition value="11"/>
-              <text value="Edit Profile"/>
+              <icon value="com/company/images/hamburger-icon.png"/>
+              <text value=""/>
             </properties>
           </component>
         </children>
@@ -214,44 +210,26 @@
             <properties>
               <background color="-14935012"/>
             </properties>
-            <border type="none"/>
-            <children>
-              <component id="b0faf" class="javax.swing.JLabel" binding="activityLabel">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-1"/>
-                  <font name="Century Gothic"/>
-                  <foreground color="-1"/>
-                  <text value="ACTIVITY"/>
-                </properties>
-              </component>
-            </children>
+            <border type="none" title="RECENT ACTIVITY" title-justification="2">
+              <font name="Century Gothic" size="12"/>
+              <title-color color="-1"/>
+            </border>
+            <children/>
           </grid>
-          <grid id="ce65b" binding="friendsPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
+          <grid id="ce65b" binding="friendsPanel" layout-manager="GridBagLayout">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-14935012"/>
               <enabled value="false"/>
+              <foreground color="-723724"/>
             </properties>
-            <border type="none"/>
-            <children>
-              <component id="dd616" class="javax.swing.JLabel" binding="friendsLabel">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-1"/>
-                  <font name="Century Gothic"/>
-                  <foreground color="-1"/>
-                  <text value="FRIENDS"/>
-                </properties>
-              </component>
-            </children>
+            <border type="none" title="FRIENDS" title-justification="2">
+              <font name="Century Gothic" size="12" style="0"/>
+              <title-color color="-1"/>
+            </border>
+            <children/>
           </grid>
           <grid id="b3640" binding="aboutPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
@@ -262,7 +240,10 @@
               <background color="-14935012"/>
               <enabled value="false"/>
             </properties>
-            <border type="none"/>
+            <border type="none">
+              <font name="Century Gothic" size="12"/>
+              <title-color color="-1"/>
+            </border>
             <children>
               <grid id="fb2cd" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="1">
                 <margin top="0" left="0" bottom="0" right="0"/>
@@ -272,37 +253,40 @@
                 <properties>
                   <background color="-14935012"/>
                 </properties>
-                <border type="none"/>
+                <border type="none" title="ABOUT" title-justification="2">
+                  <font name="Century Gothic" size="12"/>
+                  <title-color color="-1"/>
+                </border>
                 <children>
                   <component id="fa35d" class="javax.swing.JLabel" binding="locationLabel">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <background color="-1"/>
-                      <font name="Century Gothic"/>
+                      <font name="Century Gothic" style="0"/>
                       <foreground color="-1"/>
                       <text value="Location:"/>
                     </properties>
                   </component>
                   <component id="19db0" class="javax.swing.JLabel" binding="jobLabel">
                     <constraints>
-                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <background color="-1"/>
-                      <font name="Century Gothic"/>
+                      <font name="Century Gothic" style="0"/>
                       <foreground color="-1"/>
                       <text value="Label"/>
                     </properties>
                   </component>
                   <component id="a9998" class="javax.swing.JLabel" binding="nameLabel">
                     <constraints>
-                      <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <background color="-1"/>
-                      <font name="Century Gothic"/>
+                      <font name="Century Gothic" style="0"/>
                       <foreground color="-1"/>
                       <text value="Label"/>
                     </properties>

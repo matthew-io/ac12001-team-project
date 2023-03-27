@@ -68,8 +68,16 @@ public class Main {
         network.addNode(y = new Profile("dannyD", "James", "Griffin", "Aldi", "Dundee", network.getTotalProfiles() + 1));
         network.addNode(z = new Profile("smellyT", "Phil", "Griffin", "Aldi", "Dundee", network.getTotalProfiles() + 1));
 
-        LoginFrame frame = new LoginFrame(network);
-        frame.displayFrame();
+        p.addFriend(2);
+        p.addFriend(4);
+        p.setBio("Praesent auctor congue consectetur. Proin in ex non diam interdum maximus id at lorem. Integer in pretium tortor. Nunc ac hendrerit metus. Fusce risus leo, malesuada id urna vel, tristique viverra diam. Sed maximus turpis at nisl tincidunt, id consequat orci bibendum. Morbi ligula odio, tincidunt nec ante a, sodales venenatis est. Vestibulum tristique metus urna, quis hendrerit quam suscipit eget. Etiam viverra a mi et dignissim. Vestibulum sollicitudin neque quis velit tincidunt, vitae mattis nisl varius.");
+
+//
+//        LoginFrame frame = new LoginFrame(network);
+//        frame.displayFrame();
+
+        LoginFrame loginFrame = new LoginFrame(network);
+        loginFrame.displayFrame();
     }
 
 //    public static void menu() {

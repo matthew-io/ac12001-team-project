@@ -7,6 +7,7 @@ public class Profile {
     private int[] friends = {0};
     private String workplace;
     private String hometown;
+    private String bio;
     private Profile rightNode;
     private Profile leftNode;
     private int userID;
@@ -79,6 +80,15 @@ public class Profile {
             friends = tempArray;
         }
     }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public String getBio() {
+        return this.bio;
+    }
+
     public String getUsername() {
         return username;
     }

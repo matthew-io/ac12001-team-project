@@ -177,6 +177,12 @@ public class Network {
         }
     }
 
+
+    public String getUserBio(int userID) {
+        Profile p = findNode(userID);
+        return p.getBio();
+    }
+
     public int getTotalProfiles() {
         return totalProfiles;
     }

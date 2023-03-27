@@ -1,10 +1,12 @@
+package com.company;
+
 import java.util.LinkedList;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
 public class HomePage
-[
+{
     LinkedList<post> list = new LinkedList<>();
     
     public HomePage()
@@ -14,9 +16,6 @@ public class HomePage
         
         
         HomePage HP = new HomePage();
-        
-        
-         
         
         HP.list.add(new post("this is the text for this" ,"24/24/24" , "WWWWWW" , 1234));
         HP.list.add(new post("diffrent guy you know" ,"24/24/24" , "WWWWWW" , 12345));
@@ -34,7 +33,6 @@ public class HomePage
          
         System.out.println(HP.list.size());
         
-    
         System.out.println("this is the posts text of the second object in the linked list " + HP.list.get(1).getMessage());
          
         HP.DisplayUsersPosts(4306);
@@ -171,8 +169,4 @@ public class HomePage
             System.out.println(PostIDS[currentValue].getUserID() + " " + PostIDS[currentValue].getMessage());
         }        
     }
-    
-    
-    
-    
 }
