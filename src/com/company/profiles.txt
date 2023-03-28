@@ -1,4 +1,46 @@
-jackC,Peter,Griffin,Aldi,Dundee
-matthewM,Peter,Griffin,Aldi,Dundee
-dannyD,James,Griffin,Aldi,Dundee
-smellyT,Phil,Griffin,Tesco,Dundee
+CyberCat, Emily, Anderson, Aldi, Dundee
+NeonNarwhal, Ethan, Thomas, Cleaner, Forfar
+MagicMonkey, Olivia, Jackson, Tesco, Fyfe
+CosmicCorgi, Noah, Martin, Student, Dundee
+ElectricElephant, Sophia, Cooper, Aldi, Forfar
+WanderingWhale, Liam, Brown, Cleaner, Dundee
+DreamyDragonfly, Isla, Wilson, Tesco, Fyfe
+PixelPenguin, Jacob, Taylor, Student, Dundee
+SparkySquirrel, Ava, White, Aldi, Forfar
+MysticMermaid, Oliver, Harris, Cleaner, Dundee
+LunarLion, Mia, King, Tesco, Fyfe
+CosmicGiraffe, Ethan, Turner, Student, Dundee
+VelvetVulture, Emma, Phillips, Aldi, Forfar
+MagicMongoose, Noah, Campbell, Cleaner, Dundee
+ElectricEagle, Ava, Parker, Tesco, Fyfe
+WhimsicalWeasel, Olivia, Evans, Student, Dundee
+PixelPuma, Liam, Edwards, Aldi, Forfar
+SparklingSeahorse, Isla, Collins, Cleaner, Dundee
+MysticMinotaur, Jacob, Roberts, Tesco, Fyfe
+LunarLeopard, Emily, Stewart, Student, Dundee
+CosmicCheetah, Ethan, Watson, Aldi, Forfar
+ElectricElk, Olivia, Mitchell, Cleaner, Dundee
+DreamyDolphin, Noah, Scott, Tesco, Fyfe
+WanderingWolf, Sophia, Lewis, Student, Dundee
+NeonNightingale, Liam, Green, Aldi, Forfar
+MagicMoth, Isla, Adams, Cleaner, Dundee
+PixelPanther, Jacob, Mitchell, Tesco, Fyfe
+SparkyStingray, Ava, Campbell, Student, Dundee
+MysticMammoth, Emily, Fraser, Aldi, Forfar
+LunarLlama, Oliver, McDonald, Cleaner, Dundee
+CosmicCrab, Emma, Young, Tesco, Fyfe
+ElectricEmu, Noah, MacKenzie, Student, Dundee
+WhimsicalWalrus, Sophia, Robertson, Aldi, Forfar
+PixelPorcupine, Liam, Thomson, Cleaner, Dundee
+SparklingSloth, Isla, Ross, Tesco, Fyfe
+MysticMouse, Jacob, Clark, Student, Dundee
+LunarLynx, Emily, Henderson, Aldi, Forfar
+CosmicCamel, Ethan, Graham, Cleaner, Dundee
+ElectricEchidna, Olivia, McLean, Tesco, Fyfe
+DreamyDeer, Noah, Black, Student, Dundee
+WanderingWasp, Ava, McDonald, Aldi, Forfar
+NeonNuthatch, Liam, Fraser, Cleaner, Dundee
+MagicMule, Isla, Anderson, Tesco, Fyfe
+PixelPony, Jacob, Simpson, Student, Dundee
+SparkySkunk, Emily, Shaw, Aldi, Forfar
+MysticManta, Oliver, Campbell
