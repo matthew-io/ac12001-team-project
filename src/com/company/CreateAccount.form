@@ -42,6 +42,7 @@
             </constraints>
             <properties>
               <columns value="0"/>
+              <text value=""/>
             </properties>
           </component>
         </children>
@@ -74,6 +75,7 @@
             </constraints>
             <properties>
               <columns value="0"/>
+              <text value=""/>
             </properties>
           </component>
         </children>
@@ -106,6 +108,7 @@
             </constraints>
             <properties>
               <columns value="0"/>
+              <text value=""/>
             </properties>
           </component>
         </children>
@@ -138,6 +141,7 @@
             </constraints>
             <properties>
               <columns value="0"/>
+              <text value=""/>
             </properties>
           </component>
         </children>
@@ -171,6 +175,7 @@
             </constraints>
             <properties>
               <columns value="0"/>
+              <text value=""/>
             </properties>
           </component>
         </children>

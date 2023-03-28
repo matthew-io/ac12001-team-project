@@ -39,9 +39,16 @@ public class CreateAccount implements ActionListener {
             surname = surnameText.getText();
             workplace = workplaceText.getText();
             hometown = hometownText.getText();
-            Profile p = new Profile(username, firstName, surname, workplace, hometown, network.getTotalProfiles() + 1);
-            network.addNode(p);
+            String defaultText = "";
+            if (username.equals(defaultText) || firstName.equals(defaultText) || surname.equals(defaultText) || workplace.equals(defaultText) || hometown.equals(defaultText)) {
+                System.out.println("MISSING VALUES");
+            }
+            else
+            {
+                Profile p = new Profile(username, firstName, surname, workplace, hometown, network.getTotalProfiles() + 1);
+                network.addNode(p);
+                System.out.println("NEW ACCOUNT ID IS: " + p.getUserID());
+            }
         }
-
     }
 }
