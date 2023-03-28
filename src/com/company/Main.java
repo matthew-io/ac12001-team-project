@@ -2,7 +2,17 @@ package com.company;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 import java.util.InputMismatchException;
+import java.util.Scanner;
+
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Main {
@@ -34,8 +44,7 @@ public class Main {
         }
 
         Profile p = network.findNode(1);
-        System.out.println(p);
-
+        network.traverseTree(p);
         network.addFriends(1,2);
         network.addFriends(1,4);
         network.findNode(1).setBio("Praesent auctor congue consectetur. Proin in ex non diam interdum maximus id at lorem. Integer in pretium tortor. Nunc ac hendrerit metus. Fusce risus leo, malesuada id urna vel, tristique viverra diam. Sed maximus turpis at nisl tincidunt, id consequat orci bibendum. Morbi ligula odio, tincidunt nec ante a, sodales venenatis est. Vestibulum tristique metus urna, quis hendrerit quam suscipit eget. Etiam viverra a mi et dignissim. Vestibulum sollicitudin neque quis velit tincidunt, vitae mattis nisl varius.");
@@ -43,6 +52,12 @@ public class Main {
         LoginFrame loginFrame = new LoginFrame(network);
         loginFrame.displayFrame();
     }
+
+    // create array which contains numbers to be written to a file         // use a try-catch-finally block to catch file-related exceptions
+
+}
+
+
 
 //    public static void menu() {
 //        Scanner scan = new Scanner(System.in);
@@ -150,4 +165,4 @@ public class Main {
 //            }
 //        }
 //    }
-}
+
