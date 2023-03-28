@@ -1,5 +1,7 @@
 package com.company;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -8,12 +10,31 @@ public class Main {
     public static void main(String[] args) {
 
         Network network = new Network();
-        Profile p, x, y, z;
 
-        network.addNode(new Profile("jackC", "Peter", "Griffin", "Aldi", "Dundee", network.getTotalProfiles() + 1));
-        network.addNode(new Profile("matthewM", "Peter", "Griffin", "Aldi", "Dundee", network.getTotalProfiles() + 1));
-        network.addNode(new Profile("dannyD", "James", "Griffin", "Aldi", "Dundee", network.getTotalProfiles() + 1));
-        network.addNode(new Profile("smellyT", "Phil", "Griffin", "Aldi", "Dundee", network.getTotalProfiles() + 1));
+        try {
+            File file = new File("C:\\Drew\\InteliJ\\Group Project\\testrrrr\\src\\com\\company\\profiles.txt");
+            Scanner scanner = new Scanner(file);
+
+            while (scanner.hasNextLine()) {
+                String[] fields = scanner.nextLine().split(",");
+
+                String username = fields[0];
+                String firstName = fields[1];
+                String surname = fields[2];
+                String workplace = fields[3];
+                String hometown = fields[4];
+
+
+                network.addNode(new Profile(username, firstName, surname, workplace, hometown, network.getTotalProfiles()+1));
+            }
+
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        Profile p = network.findNode(1);
+        System.out.println(p);
 
         network.addFriends(1,2);
         network.addFriends(1,4);
