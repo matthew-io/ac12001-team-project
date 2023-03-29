@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ProfileFrame implements ActionListener {
     private JPanel Main;
@@ -23,6 +25,7 @@ public class ProfileFrame implements ActionListener {
     private JLabel bioLabel;
     private JTextArea bioTextArea;
     private JScrollBar scrollBar1;
+    private JLabel editProfile;
     private JScrollPane friendsScroll;
     private Profile user;
     private Network network;
@@ -35,6 +38,11 @@ public class ProfileFrame implements ActionListener {
         this.user = p;
         this.network = n;
         int[] friendsArr = user.getFriends();
+        editProfile.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+            }
+        });
         bioTextArea.setText(p.getBio());
         friendsButton.setText("FRIENDS - " + friendsArr.length);
 //        for (int i =0;i<friendsArr.length;i++) {
@@ -67,8 +75,16 @@ public class ProfileFrame implements ActionListener {
         locationLabel.setText(String.format(HOMETOWN_LABEL_FORMAT, p.getHometown()));
         nameLabel.setText(String.format(USERNAME_LABEL_FORMAT, p.getUsername()));
         usernameLabel.setText(user.getFirstName() + " " + user.getSurname());
-
+        editProfile.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                EditProfile editProfile = new EditProfile(network, p);
+                editProfile.displayFrame();
+            }
+        });
     }
+
+
     public void displayFrame() {
         JFrame frame = new JFrame(user.getFirstName() + " " + user.getSurname() + " | The Social Network");
         frame.add(activityPanel);
@@ -99,6 +115,9 @@ public class ProfileFrame implements ActionListener {
             aboutPanel.setVisible(false);
             friendsPanel.setVisible(false);
             activityPanel.setVisible(true);
+        }
+        if (e.getSource() == editProfile) {
+            System.out.println("Edit profile clicked");
         }
 
     }

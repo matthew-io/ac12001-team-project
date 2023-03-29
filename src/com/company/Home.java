@@ -12,18 +12,30 @@ public class Home implements ActionListener {
     private Profile user;
     private JPanel Main;
     private JLabel userLabel;
-    private JLabel editLabel;
     private JPanel friendsPanel;
+    private JPanel postsPanel;
+    private JTextField textField1;
+    private JButton submitButton;
 
     public Home(Network n, Profile p) {
         this.network = n;
         this.user = p;
-        String[] friendNames = {"Matthew", "Mark", "Luke", "John", "Peter", "Paul", "James", "Jude", "Simon", "Andrew"};
-        for (int i = 0; i < friendNames.length; i++) {
+
+        System.out.println(p.getFriends().length);
+
+        int[] friendsArr = p.getFriends();
+
+        for (int i =0;i<friendsArr.length;i++) {
             JLabel friendLabel = new JLabel();
-            friendLabel.setText(friendNames[i]);
+            Profile f = network.findNode(friendsArr[i]);
+            friendLabel.setForeground(Color.WHITE);
+            friendLabel.setText(f.getFirstName() + " " + f.getSurname());
+            friendLabel.setSize(20, 20);
+            friendLabel.setFont(new Font("Century Gothic", Font.PLAIN, 12));
+            friendsPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
             friendsPanel.add(friendLabel);
         }
+
         userLabel.setText(p.getFirstName() + " " + p.getSurname());
         userLabel.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {

@@ -13,7 +13,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="88afd" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="88afd" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="10" left="10" bottom="10" right="10"/>
         <constraints border-constraint="North"/>
         <properties>
@@ -32,35 +32,6 @@
               <text value="Label"/>
             </properties>
           </component>
-          <component id="70a52" class="javax.swing.JLabel" binding="editLabel">
-            <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <icon value="com/company/images/hamburger-icon.png"/>
-              <text value=""/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <grid id="2b082" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints border-constraint="Center"/>
-        <properties>
-          <background color="-14935012"/>
-        </properties>
-        <border type="none"/>
-        <children>
-          <grid id="65f57" binding="friendsPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-14935012"/>
-            </properties>
-            <border type="none"/>
-            <children/>
-          </grid>
         </children>
       </grid>
       <grid id="fb09b" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -71,6 +42,112 @@
         </properties>
         <border type="none"/>
         <children/>
+      </grid>
+      <grid id="9b543" layout-manager="GridBagLayout">
+        <constraints border-constraint="Center"/>
+        <properties>
+          <background color="-14935012"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="3ec6" binding="friendsPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <gridbag top="10" left="10" bottom="10" right="10" weightx="1.0" weighty="1.0"/>
+            </constraints>
+            <properties>
+              <background color="-14935012"/>
+              <font name="Century Gothic"/>
+              <foreground color="-1"/>
+              <maximumSize width="50" height="32767"/>
+              <minimumSize width="50" height="33"/>
+              <preferredSize width="50" height="33"/>
+            </properties>
+            <border type="line" title="Friends" title-justification="2">
+              <font name="Century Gothic"/>
+              <title-color color="-723724"/>
+              <color color="-1"/>
+            </border>
+            <children/>
+          </grid>
+          <grid id="d5bd7" binding="postsPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <gridbag top="10" left="10" bottom="10" right="10" weightx="1.0" weighty="1.0"/>
+            </constraints>
+            <properties>
+              <background color="-14935012"/>
+              <maximumSize width="400" height="2147483647"/>
+              <minimumSize width="400" height="23"/>
+              <preferredSize width="400" height="23"/>
+            </properties>
+            <border type="line" title="Recent Posts" title-justification="2">
+              <font name="Century Gothic"/>
+              <title-color color="-1"/>
+              <color color="-1"/>
+            </border>
+            <children>
+              <grid id="5cd3e" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="10" left="10" bottom="10" right="10"/>
+                <constraints border-constraint="North"/>
+                <properties>
+                  <background color="-14935012"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="c6dbc" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="-1" height="50"/>
+                        <preferred-size width="150" height="50"/>
+                        <maximum-size width="-1" height="50"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-14935012"/>
+                      <columns value="50"/>
+                      <font name="Century Gothic"/>
+                      <foreground color="-657931"/>
+                      <margin top="2" left="6" bottom="2" right="6"/>
+                    </properties>
+                  </component>
+                  <component id="f864" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-1"/>
+                      <font name="Century Gothic"/>
+                      <foreground color="-1"/>
+                      <text value="Create a Post"/>
+                    </properties>
+                  </component>
+                  <component id="89371" class="javax.swing.JButton" binding="submitButton" default-binding="true">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="45" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-12237499"/>
+                      <font name="Century Gothic"/>
+                      <foreground color="-1"/>
+                      <horizontalAlignment value="0"/>
+                      <text value="Submit"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="af7f6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <background color="-14935012"/>
+                </properties>
+                <border type="none"/>
+                <children/>
+              </grid>
+            </children>
+          </grid>
+        </children>
       </grid>
     </children>
   </grid>
