@@ -48,6 +48,7 @@ public class CreateAccount implements ActionListener {
                 Profile p = new Profile(username, firstName, surname, workplace, hometown, network.getTotalProfiles() + 1);
                 network.addNode(p);
                 System.out.println("NEW ACCOUNT ID IS: " + p.getUserID());
+
             }
         }
     }
