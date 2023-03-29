@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8b80377-7f0a-40ab-a390-57e1cb067992" name="Changes" comment="push for drew">
+    <list default="true" id="e8b80377-7f0a-40ab-a390-57e1cb067992" name="Changes" comment="pushing most recent changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/CreateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CreateAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Home.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Home.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LoginFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ProfileFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/post.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680101962957</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="pushing most recent changes">
+      <created>1680103403352</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680103403352</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -92,6 +101,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changes to everything" />
     <MESSAGE value="push for drew" />
-    <option name="LAST_COMMIT_MESSAGE" value="push for drew" />
+    <MESSAGE value="pushing most recent changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="pushing most recent changes" />
   </component>
 </project>

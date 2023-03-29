@@ -37,6 +37,9 @@ public class ProfileFrame implements ActionListener {
     public ProfileFrame(Network n, Profile p) {
         this.user = p;
         this.network = n;
+
+
+
         int[] friendsArr = user.getFriends();
         editProfile.addMouseListener(new MouseAdapter() {
             @Override
@@ -45,19 +48,6 @@ public class ProfileFrame implements ActionListener {
         });
         bioTextArea.setText(p.getBio());
         friendsButton.setText("FRIENDS - " + friendsArr.length);
-//        for (int i =0;i<friendsArr.length;i++) {
-//            Profile friend = network.findNode(friendsArr[i]);
-//            JLabel friendLabel = new JLabel();
-//            if (i != friendsArr.length -1) {
-//                friendLabel.setText(friend.getFirstName() + " " + friend.getSurname() + " | ");
-//            } else{
-//                friendLabel.setText(friend.getFirstName() + " " + friend.getSurname());
-//            }
-//            friendLabel.setForeground(Color.WHITE);
-//            friendLabel.setFont(new Font("Century Gothic", Font.PLAIN, 12));
-//            friendLabel.setSize(20, 20);
-//            friendsPanel.add(friendLabel);
-//        }
         for (int i =0; i<p.getFriends().length;i++) {
             JLabel friendLabel = new JLabel();
             friendLabel.setText(" " + n.findNode(p.getFriends()[i]).getUsername() + " ");
@@ -65,6 +55,16 @@ public class ProfileFrame implements ActionListener {
             friendLabel.setSize(20, 20);
             friendsPanel.add(friendLabel);
         }
+//        LinkedList<post> posts = p.getPosts();
+//        Iterator it = posts.iterator();
+//        while (it.hasNext()) {
+//            post userPost = (post) it.next();
+//            JLabel postLabel = new JLabel();
+//            System.out.println(userPost.getMessage());
+//            postLabel.setSize(20,20);
+//            postLabel.setText(userPost.getMessage());
+//        }
+
         friendsPanel.setVisible(false);
         aboutPanel.setVisible(false);
         bioLabel.setText(p.getFirstName() + " " + p.getSurname() + "'s Biography");

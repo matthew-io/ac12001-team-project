@@ -39,6 +39,16 @@ public class Main {
         network.addFriends(1, 4);
         network.findNode(1).setBio("Praesent auctor congue consectetur. Proin in ex non diam interdum maximus id at lorem. Integer in pretium tortor. Nunc ac hendrerit metus. Fusce risus leo, malesuada id urna vel, tristique viverra diam. Sed maximus turpis at nisl tincidunt, id consequat orci bibendum. Morbi ligula odio, tincidunt nec ante a, sodales venenatis est. Vestibulum tristique metus urna, quis hendrerit quam suscipit eget. Etiam viverra a mi et dignissim. Vestibulum sollicitudin neque quis velit tincidunt, vitae mattis nisl varius.");
 
+        p.createPost("MASODJASODJ");
+
+//        LinkedList<post> posts = p.getPosts();
+//
+//        Iterator it = posts.iterator();
+//
+//        while (it.hasNext()) {
+//            post userPost = (post) it.next();
+//            System.out.println(userPost.getMessage());
+//        }
 
         LoginFrame loginFrame = new LoginFrame(network);
         loginFrame.displayFrame();

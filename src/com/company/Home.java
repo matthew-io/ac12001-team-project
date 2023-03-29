@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 public class Home implements ActionListener {
     private Network network;
@@ -17,12 +19,30 @@ public class Home implements ActionListener {
     private JTextField textField1;
     private JButton submitButton;
     private JPanel contentPanel;
+    private JTextField textField2;
+    private JButton button1;
+    private JButton nextButton;
 
     public Home(Network n, Profile p) {
         this.network = n;
         this.user = p;
 
         int[] friendsArr = p.getFriends();
+
+        for (int i =0;i<friendsArr.length;i++) {
+            Profile f = network.findNode(friendsArr[i]);
+            LinkedList<post> posts = f.getPosts();
+            Iterator it = posts.iterator();
+            while (it.hasNext()) {
+                JLabel postLabel = new JLabel();
+                postLabel.setForeground(Color.WHITE);
+                postLabel.setHorizontalAlignment(JLabel.LEFT);
+                post userPost = (post) it.next();
+                postLabel.setText(userPost.getMessage());
+                contentPanel.add(postLabel);
+            }
+        }
+
 
         for (int i =0;i<friendsArr.length;i++) {
             JLabel friendLabel = new JLabel();

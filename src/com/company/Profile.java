@@ -1,5 +1,9 @@
 package com.company;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.LinkedList;
+
 public class Profile {
     private String username;
     private String firstName;
@@ -10,10 +14,24 @@ public class Profile {
     private String bio;
     private Profile rightNode;
     private Profile leftNode;
+    LinkedList<post> posts = new LinkedList<>();
     private int userID;
 
     Profile left, right;
 
+
+    public void createPost(String message) {
+        Date thisDate = new Date();
+        SimpleDateFormat date = new SimpleDateFormat("dd/MM/YY");
+
+        String Date = date.format(thisDate);
+        post post = new post(message, Date, "New Post", username);
+        posts.add(post);
+    }
+
+    public LinkedList<post> getPosts() {
+        return posts;
+    }
 
     public Profile(String UserName , String NameOne , String NameTwo, String WorkPlace , String HomeTown , int ID)
     {

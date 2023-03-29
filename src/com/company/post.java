@@ -9,11 +9,8 @@ public class post
     private String userName;
     private int PostID;
 
-
-
     public post(String x, String z, String w, String y)
     {
-
         message = x;
         date = z;
         title = w;

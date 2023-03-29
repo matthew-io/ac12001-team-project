@@ -233,8 +233,6 @@ public class Network {
         return (currentNode);
     }
 
-
-
     public void updateNode(Profile p) {
         int nodeToFind = p.getUserID();
         Profile currentNode = root;
@@ -369,7 +367,6 @@ public class Network {
     public void traverseTree(Profile p) {
         if (p != null) {
             traverseTree(p.left);
-            System.out.print(" " + p.getUserID() + ": " + p.getUsername());
             traverseTree(p.right);
         }
     }
