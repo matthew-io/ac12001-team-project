@@ -90,7 +90,7 @@ public class ProfileFrame implements ActionListener {
         frame.add(activityPanel);
         frame.setResizable(false);
         frame.setContentPane(new ProfileFrame(network, user).Main);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
     }

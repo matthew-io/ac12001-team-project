@@ -83,8 +83,7 @@ public class HomePage
         String title = "";
         String message = "";
         int userID = 0;
-        
-        
+
         System.out.println("please enter the title of ur post");
         System.out.println("it has to be less than 15 letters");
         while(true){
@@ -121,7 +120,7 @@ public class HomePage
     }
     
     
-    public void DisplayUsersPosts(int LookID){
+    public String DisplayUsersPosts(int LookID){
         
         post[] PostIDS = new post[100];
         
@@ -166,7 +165,9 @@ public class HomePage
                 System.out.println(i + " " + PostIDS[i].getUserID());
             }
             
-            System.out.println(PostIDS[currentValue].getUserID() + " " + PostIDS[currentValue].getMessage());
-        }        
+            return (PostIDS[currentValue].getUserID() + " " + PostIDS[currentValue].getMessage());
+        }
+
+        return null;
     }
 }

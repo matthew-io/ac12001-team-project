@@ -16,12 +16,13 @@ public class Home implements ActionListener {
     private JPanel postsPanel;
     private JTextField textField1;
     private JButton submitButton;
+    private JPanel contentPanel;
+    private HomePage homepage;
 
-    public Home(Network n, Profile p) {
+    public Home(Network n, Profile p, HomePage h) {
         this.network = n;
         this.user = p;
-
-        System.out.println(p.getFriends().length);
+        this.homepage = h;
 
         int[] friendsArr = p.getFriends();
 
@@ -42,7 +43,8 @@ public class Home implements ActionListener {
                 ProfileFrame profileFrame = new ProfileFrame(network, user);
                 profileFrame.displayFrame();
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(Main);
-                frame.dispose();
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+//                frame.dispose();
             }
         });
     }
@@ -55,7 +57,7 @@ public class Home implements ActionListener {
     public void displayFrame() {
         JFrame frame = new JFrame("Home | The Social Network");
         frame.setResizable(false);
-        frame.setContentPane(new Home(network, user).Main);
+        frame.setContentPane(new Home(network, user, homepage).Main);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

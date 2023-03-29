@@ -68,12 +68,15 @@ public class Main {
         p.addFriend(2);
         p.addFriend(4);
         p.setBio("Praesent auctor congue consectetur. Proin in ex non diam interdum maximus id at lorem. Integer in pretium tortor. Nunc ac hendrerit metus. Fusce risus leo, malesuada id urna vel, tristique viverra diam. Sed maximus turpis at nisl tincidunt, id consequat orci bibendum. Morbi ligula odio, tincidunt nec ante a, sodales venenatis est. Vestibulum tristique metus urna, quis hendrerit quam suscipit eget. Etiam viverra a mi et dignissim. Vestibulum sollicitudin neque quis velit tincidunt, vitae mattis nisl varius.");
+        HomePage homePage = new HomePage();
+
+//        homePage.makePost(p.getUserID());
 
 //
 //        LoginFrame frame = new LoginFrame(network);
 //        frame.displayFrame();
 
-        LoginFrame loginFrame = new LoginFrame(network);
+        LoginFrame loginFrame = new LoginFrame(network, homePage);
         loginFrame.displayFrame();
     }
 

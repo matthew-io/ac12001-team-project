@@ -10,9 +10,11 @@ public class LoginFrame implements ActionListener {
     private JButton createAccountButton;
     private JTextField textField1;
     private Network network;
+    private HomePage homePage;
 
-    public LoginFrame(Network n) {
+    public LoginFrame(Network n, HomePage h) {
         this.network = n;
+        this.homePage = h;
         logInButton.addActionListener(this);
         createAccountButton.addActionListener(this);
     }
@@ -20,7 +22,7 @@ public class LoginFrame implements ActionListener {
     public void displayFrame() {
         JFrame frame = new JFrame("Log In | The Social Network");
         frame.setResizable(false);
-        frame.setContentPane(new LoginFrame(network).Main);
+        frame.setContentPane(new LoginFrame(network, homePage).Main);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
@@ -28,16 +30,16 @@ public class LoginFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == logInButton) {
-            Profile p = new Profile();
+            Profile p = network.root;
             try {
-                int userId = Integer.parseInt(textField1.getText());
-                if (network.findNode(userId) == null) {
+                String userId = (textField1.getText());
+                if (network.traverseTree(p, userId) == null) {
                     JOptionPane.showMessageDialog(Main, "User does not exist");
                     textField1.setText("");
                 } else {
-                    p = network.findNode(userId);
+                    p = network.traverseTree(p, userId);
                     JOptionPane.showMessageDialog(Main, "Logged in successfully.");
-                    Home home = new Home(network, p);
+                    Home home = new Home(network, p, homePage);
                     JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(Main);
                     frame.dispose();
                     home.displayFrame();
