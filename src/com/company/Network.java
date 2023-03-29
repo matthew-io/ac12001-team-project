@@ -1,4 +1,13 @@
 package com.company;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.util.Scanner;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
@@ -250,6 +259,31 @@ public class Network {
         p2.addFriend(userID1);
 
     }
+
+    public void writeToFile() {
+        PrintWriter printWriter = null;
+        try {
+            boolean check = false;
+            FileOutputStream outputStream = new FileOutputStream("C:\\Drew\\InteliJ\\Group Project\\testrrrr\\src\\com\\company\\profiles.txt");
+            printWriter = new PrintWriter(outputStream);
+            while (true) {
+                Scanner myObj = new Scanner(System.in); // Create a Scanner object
+                System.out.println("Enter values u want in the file");
+                String userIn = myObj.nextLine(); // Read user input
+                if (userIn.equals("")) {
+                    break;
+                }
+                printWriter.println(userIn);
+            }
+        } catch (IOException e) {
+            System.out.println("Sorry, there has been a problem opening or writing to the file");
+            System.out.println("/t" + e);
+        } finally {
+            if (printWriter != null)
+                printWriter.close();
+        }
+    }
+
     public void compareFriends(int userID1, int userID2)
     {
         Profile p1 = findNode(userID1);

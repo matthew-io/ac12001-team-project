@@ -58,9 +58,9 @@ public class ProfileFrame implements ActionListener {
 //            friendLabel.setSize(20, 20);
 //            friendsPanel.add(friendLabel);
 //        }
-        for (int i =0;i<15;i++) {
+        for (int i =0; i<p.getFriends().length;i++) {
             JLabel friendLabel = new JLabel();
-            friendLabel.setText("Matthew");
+            friendLabel.setText(" " + n.findNode(p.getFriends()[i]).getUsername() + " ");
             friendLabel.setForeground(Color.WHITE);
             friendLabel.setSize(20, 20);
             friendsPanel.add(friendLabel);
