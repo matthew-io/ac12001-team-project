@@ -35,20 +35,6 @@ public class Network {
         }
     }
 
-    public Profile traverseTree(Profile p , String enteredName) {
-        Profile user = null;
-
-        if (p != null) {
-            if(p.getUsername().equals(enteredName)){ user = p;}
-
-            traverseTree(p.left);
-//System.out.print(" " + p.getUserID() + ": " + p.getUsername());
-            traverseTree(p.right);
-        }
-        System.out.println(user.getFirstName() + " " + user.getSurname());
-        return user;
-    }
-
     public void displayFriendsOfFriend(int userID)
     {
         Scanner s = new Scanner(System.in);
@@ -522,5 +508,4 @@ public class Network {
             }
         }
     }
-
 }

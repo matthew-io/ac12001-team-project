@@ -1,84 +1,60 @@
 package com.company;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
 public class Main {
     //test
     public static void main(String[] args) {
-//        // create an object of BinaryTree
-//        Network network = new Network();
-//        Scanner s = new Scanner(System.in);
-//        int input;
-//        int userID;
-//
-//        //add nodes of profiles to tree
-//        network.addNode(new Profile("BIGWEB", "Drew", "Webster", "Student", "Dundee", network.getTotalProfiles() + 1));
-//        network.addNode(new Profile("Jonny03", "John", "Diggs", "Student", "Dundee", network.getTotalProfiles() + 1));
-//        network.addNode(new Profile("Lady_Boy1", "Timmy", "Tam", "Aldi", "Dundee", network.getTotalProfiles() + 1));
-//        network.addNode(new Profile("GOAT", "Digsby", "Brown", "Student", "Dundee", network.getTotalProfiles() + 1));
-//        network.addNode(new Profile("xXGr1ffXx", "Peter", "Griffin", "Aldi", "Dundee", network.getTotalProfiles() + 1));
-//
-//
-//
-//
-//
-//        System.out.println("Welcome to social media");
-//
-//        while (true) {
-//            System.out.println("Enter the ID of your profile or type 0 to create a new profile :");
-//            input = s.nextInt();
-//
-//            if (input == 0)
-//            {
-//                userID = network.getTotalProfiles() + 1;
-//                network.addNodeWithInput();
-//                break;
-//            }
-//
-//            else
-//            {
-//                if (network.findNode(input) != null)
-//                {
-//                    userID = input;
-//                    System.out.println("Welcome back " + network.findNode(userID).getFirstName());
-//                    break;
-//                }
-//
-//                else
-//                {
-//                    System.out.println("COULD NOT FIND USER TRY AGAIN");
-//                }
-//            }
-//        }
-//
-//        network.addFriends(1, 2);
-//        network.addFriends(1, 3);
-//
-//        network.addFriends(2, 3);
-//        network.addFriends(2, 4);
-//        network.addFriends(2, 5);
-//
-//        network.friendsInCommon(1,2);
+
         Network network = new Network();
-        Profile p, x, y, z;
 
-        network.addNode(p = new Profile("jackC", "Peter", "Griffin", "Aldi", "Dundee", network.getTotalProfiles() + 1));
-        network.addNode(x = new Profile("matthewM", "Peter", "Griffin", "Aldi", "Dundee", network.getTotalProfiles() + 1));
-        network.addNode(y = new Profile("dannyD", "James", "Griffin", "Aldi", "Dundee", network.getTotalProfiles() + 1));
-        network.addNode(z = new Profile("smellyT", "Phil", "Griffin", "Aldi", "Dundee", network.getTotalProfiles() + 1));
+        //get profile data from files and add to network
+        try {
+            //here you need to change the absoloute path to whateer it is on your computer i think
+            File file = new File("C:/Drew/InteliJ/Group Project/wednesday/src/com/company/profiles.txt");
+            Scanner scanner = new Scanner(file);
 
-        p.addFriend(2);
-        p.addFriend(4);
-        p.setBio("Praesent auctor congue consectetur. Proin in ex non diam interdum maximus id at lorem. Integer in pretium tortor. Nunc ac hendrerit metus. Fusce risus leo, malesuada id urna vel, tristique viverra diam. Sed maximus turpis at nisl tincidunt, id consequat orci bibendum. Morbi ligula odio, tincidunt nec ante a, sodales venenatis est. Vestibulum tristique metus urna, quis hendrerit quam suscipit eget. Etiam viverra a mi et dignissim. Vestibulum sollicitudin neque quis velit tincidunt, vitae mattis nisl varius.");
-        HomePage homePage = new HomePage();
+            while (scanner.hasNextLine()) {
+                String[] fields = scanner.nextLine().split(",");
 
-//        homePage.makePost(p.getUserID());
+                String username = fields[0];
+                String firstName = fields[1];
+                String surname = fields[2];
+                String workplace = fields[3];
+                String hometown = fields[4];
 
-//
-//        LoginFrame frame = new LoginFrame(network);
-//        frame.displayFrame();
 
-        LoginFrame loginFrame = new LoginFrame(network, homePage);
+                network.addNode(new Profile(username, firstName, surname, workplace, hometown, network.getTotalProfiles() + 1));
+            }
+
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        Profile p = network.findNode(1);
+        network.traverseTree(p);
+        network.addFriends(1, 2);
+        network.addFriends(1, 4);
+        network.findNode(1).setBio("Praesent auctor congue consectetur. Proin in ex non diam interdum maximus id at lorem. Integer in pretium tortor. Nunc ac hendrerit metus. Fusce risus leo, malesuada id urna vel, tristique viverra diam. Sed maximus turpis at nisl tincidunt, id consequat orci bibendum. Morbi ligula odio, tincidunt nec ante a, sodales venenatis est. Vestibulum tristique metus urna, quis hendrerit quam suscipit eget. Etiam viverra a mi et dignissim. Vestibulum sollicitudin neque quis velit tincidunt, vitae mattis nisl varius.");
+
+        LoginFrame loginFrame = new LoginFrame(network);
         loginFrame.displayFrame();
     }
+}
 
 //    public static void menu() {
 //        Scanner scan = new Scanner(System.in);
@@ -186,4 +162,4 @@ public class Main {
 //            }
 //        }
 //    }
-}
+
