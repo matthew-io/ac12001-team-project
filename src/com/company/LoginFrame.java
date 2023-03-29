@@ -10,11 +10,9 @@ public class LoginFrame implements ActionListener {
     private JButton createAccountButton;
     private JTextField textField1;
     private Network network;
-    private HomePage homePage;
 
-    public LoginFrame(Network n, HomePage h) {
+    public LoginFrame(Network n) {
         this.network = n;
-        this.homePage = h;
         logInButton.addActionListener(this);
         createAccountButton.addActionListener(this);
     }
@@ -22,7 +20,7 @@ public class LoginFrame implements ActionListener {
     public void displayFrame() {
         JFrame frame = new JFrame("Log In | The Social Network");
         frame.setResizable(false);
-        frame.setContentPane(new LoginFrame(network, homePage).Main);
+        frame.setContentPane(new LoginFrame(network).Main);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
@@ -32,14 +30,14 @@ public class LoginFrame implements ActionListener {
         if (e.getSource() == logInButton) {
             Profile p = network.root;
             try {
-                String userId = (textField1.getText());
-                if (network.traverseTree(p, userId) == null) {
+                String userName = (textField1.getText());
+                if (network.findByUserName(p, userName) == null) {
                     JOptionPane.showMessageDialog(Main, "User does not exist");
                     textField1.setText("");
                 } else {
-                    p = network.traverseTree(p, userId);
+                    p = network.findByUserName(p, userName);
                     JOptionPane.showMessageDialog(Main, "Logged in successfully.");
-                    Home home = new Home(network, p, homePage);
+                    Home home = new Home(network, p);
                     JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(Main);
                     frame.dispose();
                     home.displayFrame();

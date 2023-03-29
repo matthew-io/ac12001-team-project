@@ -17,12 +17,10 @@ public class Home implements ActionListener {
     private JTextField textField1;
     private JButton submitButton;
     private JPanel contentPanel;
-    private HomePage homepage;
 
-    public Home(Network n, Profile p, HomePage h) {
+    public Home(Network n, Profile p) {
         this.network = n;
         this.user = p;
-        this.homepage = h;
 
         int[] friendsArr = p.getFriends();
 
@@ -57,7 +55,7 @@ public class Home implements ActionListener {
     public void displayFrame() {
         JFrame frame = new JFrame("Home | The Social Network");
         frame.setResizable(false);
-        frame.setContentPane(new Home(network, user, homepage).Main);
+        frame.setContentPane(new Home(network, user).Main);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

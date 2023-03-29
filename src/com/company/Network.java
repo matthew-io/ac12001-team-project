@@ -1,4 +1,5 @@
 package com.company;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -33,6 +34,21 @@ public class Network {
                 }
             }
         }
+    }
+
+    public Profile findByUserName(Profile p , String enteredName) {
+        Profile user = null;
+        Boolean found = false;
+
+        if (p != null && found == false) {
+            if(p.getUsername().equals(enteredName)){
+                found = true;
+                user = p;
+            }
+            findByUserName(p.left, enteredName);
+            findByUserName(p.right, enteredName);
+        }
+        return user;
     }
 
     public void displayFriendsOfFriend(int userID)
@@ -140,7 +156,7 @@ public class Network {
                     Profile friend = findNode(p.getFriends()[i]);
                     if(friend.getWorkplace().equals(p.getWorkplace()))
                     {
-                       System.out.println(friend.getUsername());
+                        System.out.println(friend.getUsername());
                     }
                 }
                 break;
@@ -230,7 +246,7 @@ public class Network {
                 break;
 
             } else if (currentNode.getUserID() == nodeToFind) {
-               // System.out.println("Found user: " + currentNode.getUsername());
+                // System.out.println("Found user: " + currentNode.getUsername());
                 currentNode = p;
                 break;
 
@@ -257,7 +273,7 @@ public class Network {
         PrintWriter printWriter = null;
         try {
             boolean check = false;
-            FileOutputStream outputStream = new FileOutputStream("C:\\Drew\\InteliJ\\Group Project\\testrrrr\\src\\com\\company\\profiles.txt");
+            FileOutputStream outputStream = new FileOutputStream("src/com/company/profiles.txt");
             printWriter = new PrintWriter(outputStream);
             while (true) {
                 Scanner myObj = new Scanner(System.in); // Create a Scanner object
@@ -357,7 +373,7 @@ public class Network {
             traverseTree(p.right);
         }
     }
-        /**
+    /**
      * this allows me to create the tree without having to enter values every time I load the program
      */
     public void addNodeNoInput() {
