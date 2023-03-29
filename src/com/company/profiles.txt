@@ -43,4 +43,26 @@ NeonNuthatch, Liam, Fraser, Cleaner, Dundee
 MagicMule, Isla, Anderson, Tesco, Fyfe
 PixelPony, Jacob, Simpson, Student, Dundee
 SparkySkunk, Emily, Shaw, Aldi, Forfar
-MysticManta, Oliver, Campbell
+CosmicChameleon, Lucas, Wong, Tesco, Fyfe
+ElectricEel, Isabella, Baker, Cleaner, Dundee
+DreamyDove, Elijah, Patel, Aldi, Forfar
+WanderingWarthog, Scarlett, Nguyen, Tesco, Fyfe
+NeonNinja, Mason, Hernandez, Student, Dundee
+MysticMoose, Lily, Kim, Aldi, Forfar
+PixelPuffin, Caleb, Jones, Cleaner, Dundee
+SparkyShark, Amelia, Lee, Tesco, Fyfe
+LunarLizard, Sebastian, Garcia, Student, Dundee
+WhimsicalWeaver, Ava, Rodriguez, Aldi, Forfar
+MagicMarmoset, Jackson, Wright, Cleaner, Dundee
+ElectricElkhound, Sophia, Scott, Tesco, Fyfe
+DreamyDolphin, Ethan, Davis, Student, Dundee
+WanderingWarbler, Olivia, Perez, Aldi, Forfar
+NeonNewt, William, Martin, Cleaner, Dundee
+MysticManta, Emily, Anderson, Tesco, Fyfe
+PixelPlatypus, Benjamin, Thompson, Student, Dundee
+SparkySquid, Grace, Hall, Aldi, Forfar
+LunarLamb, Samuel, Baker, Cleaner, Dundee
+CosmicCaterpillar, Abigail, Hernandez, Tesco, Fyfe
+ElectricEagle, Joseph, White, Student, Dundee
+WhimsicalWombat, Charlotte, Garcia, Aldi, Forfar
+MagicMule, Michael, Perez, Cleaner, Dundee

@@ -21,8 +21,10 @@ public class Main {
 
         Network network = new Network();
 
+        //get profile data from files and add to network
         try {
-            File file = new File("C:\\Drew\\InteliJ\\Group Project\\testrrrr\\src\\com\\company\\profiles.txt");
+            //here you need to change the absoloute path to whateer it is on your computer i think
+            File file = new File("C:/Drew/InteliJ/Group Project/wednesday/src/com/company/profiles.txt");
             Scanner scanner = new Scanner(file);
 
             while (scanner.hasNextLine()) {
@@ -35,7 +37,7 @@ public class Main {
                 String hometown = fields[4];
 
 
-                network.addNode(new Profile(username, firstName, surname, workplace, hometown, network.getTotalProfiles()+1));
+                network.addNode(new Profile(username, firstName, surname, workplace, hometown, network.getTotalProfiles() + 1));
             }
 
             scanner.close();
@@ -45,19 +47,14 @@ public class Main {
 
         Profile p = network.findNode(1);
         network.traverseTree(p);
-        network.addFriends(1,2);
-        network.addFriends(1,4);
+        network.addFriends(1, 2);
+        network.addFriends(1, 4);
         network.findNode(1).setBio("Praesent auctor congue consectetur. Proin in ex non diam interdum maximus id at lorem. Integer in pretium tortor. Nunc ac hendrerit metus. Fusce risus leo, malesuada id urna vel, tristique viverra diam. Sed maximus turpis at nisl tincidunt, id consequat orci bibendum. Morbi ligula odio, tincidunt nec ante a, sodales venenatis est. Vestibulum tristique metus urna, quis hendrerit quam suscipit eget. Etiam viverra a mi et dignissim. Vestibulum sollicitudin neque quis velit tincidunt, vitae mattis nisl varius.");
 
         LoginFrame loginFrame = new LoginFrame(network);
         loginFrame.displayFrame();
     }
-
-    // create array which contains numbers to be written to a file         // use a try-catch-finally block to catch file-related exceptions
-
 }
-
-
 
 //    public static void menu() {
 //        Scanner scan = new Scanner(System.in);
