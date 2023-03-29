@@ -6,11 +6,7 @@ import java.awt.event.ActionListener;
 
 public class EditProfile implements ActionListener {
     private JPanel Main;
-    private JTextField usernameField;
-    private JTextField firstNameField;
-    private JTextField surnameField;
-    private JTextField workplaceField;
-    private JTextField hometownField;
+    private JTextField bioField;
     private JButton updateAccountButton;
     private Network network;
     private Profile p;
@@ -34,20 +30,11 @@ public class EditProfile implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == updateAccountButton) {
-            String username, firstName, surname, workplace, hometown;
-            username = usernameField.getText();
-            firstName = firstNameField.getText();
-            surname = surnameField.getText();
-            workplace = workplaceField.getText();
-            hometown = hometownField.getText();
-
-            p.setUsername(username);
-            p.setFirstName(firstName);
-            p.setSurname(surname);
-            p.setWorkplace(workplace);
-            p.setHometown(hometown);
-
-            Main.repaint();
+            String bio = bioField.getText();
+            p.setBio(bio);
+            JOptionPane.showMessageDialog(Main, "Updated bio successfully.");
+            JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(Main);
+            frame.repaint();
         }
     }
 }

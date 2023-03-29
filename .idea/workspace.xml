@@ -3,22 +3,37 @@
   <component name="ChangeListManager">
     <list default="true" id="e8b80377-7f0a-40ab-a390-57e1cb067992" name="Changes" comment="pushing most recent changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/CreateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CreateAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/EditProfile.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/EditProfile.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/EditProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/EditProfile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Home.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Home.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Home.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Network.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ProfileFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ProfileFrame.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/ProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ProfileFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/post.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="enpuus53" />
@@ -84,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680103403352</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="pushing most recent changes">
+      <created>1680107100922</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680107100922</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,6 +119,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changes to everything" />

@@ -95,7 +95,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="c6dbc" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+                  <component id="c6dbc" class="javax.swing.JTextField" binding="postTextField">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                         <minimum-size width="-1" height="50"/>
@@ -136,7 +136,7 @@
                   </component>
                 </children>
               </grid>
-              <grid id="af7f6" binding="contentPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+              <grid id="af7f6" binding="contentPanel" layout-manager="BorderLayout" hgap="10" vgap="5">
                 <constraints border-constraint="Center"/>
                 <properties>
                   <background color="-14935012"/>
@@ -147,7 +147,7 @@
                   <color color="-4473925"/>
                 </border>
                 <children>
-                  <component id="40fc6" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+                  <component id="40fc6" class="javax.swing.JTextField" binding="postField">
                     <constraints border-constraint="Center"/>
                     <properties>
                       <background color="-14935012"/>
@@ -163,7 +163,7 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="bc750" class="javax.swing.JButton" binding="button1" default-binding="true">
+                      <component id="bc750" class="javax.swing.JButton" binding="previousButton">
                         <constraints/>
                         <properties>
                           <label value="Previous"/>
@@ -178,11 +178,13 @@
                       </component>
                     </children>
                   </grid>
-                  <component id="8e952" class="javax.swing.JLabel">
+                  <component id="8e952" class="javax.swing.JLabel" binding="headingLabel">
                     <constraints border-constraint="North"/>
                     <properties>
                       <foreground color="-1312513"/>
                       <text value="Username - 29/03/2023"/>
+                      <verticalAlignment value="1"/>
+                      <verticalTextPosition value="1"/>
                     </properties>
                   </component>
                 </children>

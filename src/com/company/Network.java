@@ -1,6 +1,7 @@
 package com.company;
 
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -10,6 +11,9 @@ import java.util.Scanner;
 public class Network {
     // instance variables
     Profile root;
+    private String[] dates = new String[100];
+    private String[] messages = new String[100];
+    private int[] postUserID = new int[100];
     int totalProfiles;
 
     /**
@@ -17,6 +21,27 @@ public class Network {
      */
     Network() {
         totalProfiles = 0;
+    }
+
+    public void setPostUserID(int pos, int value){
+        postUserID[pos] = value;
+    }
+
+    public int getPostUserID(int pos){
+        return postUserID[pos];
+    }
+
+    public void setDates(int pos, String value){
+        dates[pos] = value;
+    }
+    public String getDates(int pos){
+        return dates[pos];
+    }
+    public void setMessages(int pos, String value){
+        messages[pos] = value;
+    }
+    public String getMessages(int pos){
+        return messages[pos];
     }
 
     public void friendsInCommon(int userID1, int userID2) {
@@ -33,6 +58,20 @@ public class Network {
                     System.out.println(commonFriend.getUsername());
                 }
             }
+        }
+    }
+
+    public void writePostToFile(String text, String Date , int userID) {
+        try {
+            FileWriter fileWriter = new FileWriter("C:\\Users\\alexandergordon\\Desktop\\29_03_2023 project\\ac12001-team-project\\src\\com\\company\\postInfo.txt", true);
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+            String textToAppend = (text + ",,,;;;,,," + Date) + ",,,;;;,,," + userID ;
+            printWriter.println(textToAppend);
+            printWriter.close();
+        }
+        catch (IOException e){
+            System.out.println("nothing happened");
+            e.printStackTrace();
         }
     }
 

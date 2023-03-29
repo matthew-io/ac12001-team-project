@@ -50,7 +50,7 @@
           </component>
         </children>
       </grid>
-      <grid id="5fbcf" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="5fbcf" binding="mainFrame" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="10" left="10" bottom="10" right="10"/>
         <constraints border-constraint="Center"/>
         <properties>
@@ -202,13 +202,17 @@
               </grid>
             </children>
           </grid>
-          <grid id="2750f" binding="activityPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
+          <grid id="2750f" binding="activityPanel" layout-manager="GridBagLayout">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="550"/>
+                <preferred-size width="-1" height="550"/>
+                <maximum-size width="-1" height="550"/>
+              </grid>
             </constraints>
             <properties>
               <background color="-14935012"/>
+              <foreground color="-1312513"/>
             </properties>
             <border type="none" title="RECENT ACTIVITY" title-justification="2">
               <font name="Century Gothic" size="12"/>
@@ -297,12 +301,6 @@
           </grid>
         </children>
       </grid>
-      <component id="4322b" class="javax.swing.JScrollBar" binding="scrollBar1" default-binding="true">
-        <constraints border-constraint="East"/>
-        <properties>
-          <maximum value="50"/>
-        </properties>
-      </component>
     </children>
   </grid>
 </form>

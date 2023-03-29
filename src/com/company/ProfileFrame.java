@@ -24,8 +24,8 @@ public class ProfileFrame implements ActionListener {
     private JLabel iconLabel;
     private JLabel bioLabel;
     private JTextArea bioTextArea;
-    private JScrollBar scrollBar1;
     private JLabel editProfile;
+    private JPanel mainFrame;
     private JScrollPane friendsScroll;
     private Profile user;
     private Network network;
@@ -37,8 +37,6 @@ public class ProfileFrame implements ActionListener {
     public ProfileFrame(Network n, Profile p) {
         this.user = p;
         this.network = n;
-
-
 
         int[] friendsArr = user.getFriends();
         editProfile.addMouseListener(new MouseAdapter() {
@@ -55,16 +53,20 @@ public class ProfileFrame implements ActionListener {
             friendLabel.setSize(20, 20);
             friendsPanel.add(friendLabel);
         }
-//        LinkedList<post> posts = p.getPosts();
-//        Iterator it = posts.iterator();
-//        while (it.hasNext()) {
-//            post userPost = (post) it.next();
-//            JLabel postLabel = new JLabel();
-//            System.out.println(userPost.getMessage());
-//            postLabel.setSize(20,20);
-//            postLabel.setText(userPost.getMessage());
-//        }
 
+        JLabel mostRecentPost = new JLabel();
+        mostRecentPost.setForeground(Color.WHITE);
+        mostRecentPost.setSize(20, 20);
+
+        if (p.getPosts().isEmpty()) {
+            mostRecentPost.setText("No Posts :(");
+            activityPanel.add(mostRecentPost);
+        } else {
+            post mostRecent = p.getPosts().getLast();
+            mostRecentPost.setText(mostRecent.getMessage());
+            activityPanel.add(mostRecentPost);
+        }
+        activityPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
         friendsPanel.setVisible(false);
         aboutPanel.setVisible(false);
         bioLabel.setText(p.getFirstName() + " " + p.getSurname() + "'s Biography");
