@@ -35,29 +35,18 @@ public class Main {
 
         Profile p = network.findNode(1);
         Profile f = network.findNode(2);
+        Profile x = network.findNode(4);
 
-        f.createPost("RANDOM SHIT");
-        p.createPost("Test Post 1 ");
-        p.createPost("Test Post 2 ");
-
+        f.createPost("Praesent auctor congue consectetur. Proin in ex non diam interdum maximus id at lorem. Integer in pretium tortor. Nunc ac hendrerit metus. Fusce risus leo, malesuada id urna vel, tristique viverra diam. Sed maximus turpis at nisl tincidunt, id consequat orci bibendum. Morbi ligula odio, tincidunt nec ante a, sodales venenatis est. Vestibulum tristique metus urna, quis hendrerit quam suscipit eget. Etiam viverra a mi et dignissim. Vestibulum sollicitudin neque quis velit tincidunt, vitae mattis nisl varius");
+        x.createPost("Praesent auctor congue consectetur. Proin in ex non diam interdum maximus id at lorem. Integer in pretium tortor. Nunc ac hendrerit metus. Fusce risus leo, malesuada id urna vel, tristique viverra diam. Sed maximus turpis at nisl tincidunt, id consequat orci bibendum. Morbi ligula odio, tincidunt nec ante a, sodales venenatis est. Vestibulum tristique metus urna, quis hendrerit quam suscipit eget. Etiam viverra a mi et dignissim. Vestibulum sollicitudin neque quis velit tincidunt, vitae mattis nisl varius");
 
         network.traverseTree(p);
         network.addFriends(1, 2);
         network.addFriends(1, 4);
         network.findNode(1).setBio("Praesent auctor congue consectetur. Proin in ex non diam interdum maximus id at lorem. Integer in pretium tortor. Nunc ac hendrerit metus. Fusce risus leo, malesuada id urna vel, tristique viverra diam. Sed maximus turpis at nisl tincidunt, id consequat orci bibendum. Morbi ligula odio, tincidunt nec ante a, sodales venenatis est. Vestibulum tristique metus urna, quis hendrerit quam suscipit eget. Etiam viverra a mi et dignissim. Vestibulum sollicitudin neque quis velit tincidunt, vitae mattis nisl varius.");
 
-//        LinkedList<post> posts = p.getPosts();
-//
-//        Iterator it = posts.iterator();
-//
-//        while (it.hasNext()) {
-//            post userPost = (post) it.next();
-//            System.out.println(userPost.getMessage());
-//        }
-
         try {
-//here you need to change the absoloute path to whateer it is on your computer i think
-            File file = new File("C:\\Users\\alexandergordon\\Desktop\\29_03_2023 project\\ac12001-team-project\\src\\com\\company\\postInfo.txt");
+            File file = new File("src/com/company/postInfo.txt");
             Scanner scanner = new Scanner(file);
 
             int counter = 0;
@@ -71,11 +60,7 @@ public class Main {
                 network.setPostUserID(counter,Integer.parseInt(arrayValue[2]));
                 System.out.println(arrayValue[2]);
                 counter += 1;
-
-
-
             }
-
             scanner.close();
         } catch (FileNotFoundException e) {
             System.out.println("Error: " + e.getMessage());

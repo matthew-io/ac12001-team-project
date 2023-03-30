@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Home implements ActionListener {
@@ -18,11 +17,13 @@ public class Home implements ActionListener {
     private JTextField postTextField;
     private JButton submitButton;
     private JPanel contentPanel;
-    private JTextField postField;
+    private JLabel postField;
     private JButton previousButton;
     private JButton nextButton;
     private JLabel headingLabel;
+    private JTextArea friendsPostField;
     private LinkedList<post> friendsPosts;
+    private int count = 0;
 
     public Home(Network n, Profile p) {
         this.network = n;
@@ -34,23 +35,38 @@ public class Home implements ActionListener {
         int[] friendsArr = p.getFriends();
         friendsPosts = new LinkedList();
 
+
 //        for (int i =0;i<friendsArr.length;i++) {
-//            Profile f = network.findNode(friendsArr[i]);
-//            LinkedList<post> posts = f.getPosts();
-//            Iterator it = posts.iterator();
+//            if (friendsArr.length > 0) {
+//                Profile f = network.findNode(friendsArr[i]);
+//                if (f.getPosts() != null) {
+//                    LinkedList<post> posts = f.getPosts();
+//                    Iterator it = posts.iterator();
+//                    while (it.hasNext()) {
+//                        friendsPostField.setForeground(Color.BLACK);
+//                        post userPost = (post) it.next();
+//                        friendsPosts.add(userPost);
+//                    }
+//        }
+//
+//        friendsPostField.setText(friendsPosts.get(0).getMessage());
+//        headingLabel.setText(friendsPosts.get(0).getUserName() + " - Posted on " + friendsPosts.get(0).getdate());
+//        friendsPostField.setFont(new Font("Century Gothic", Font.PLAIN, 12));
+//        friendsPostField.setForeground(Color.decode("#D1603D"));
+//
+//        for (int i =0;i<friendsPosts.size();i++) {
+//            Iterator it = friendsPosts.iterator();
 //            while (it.hasNext()) {
-//                postField.setForeground(Color.WHITE);
-//                postField.setHorizontalAlignment(JLabel.LEFT);
 //                post userPost = (post) it.next();
-//                postField.setText(userPost.getMessage());
-//                headingLabel.setText(userPost.getUserName() + " - " + userPost.getdate());
+//                System.out.println(userPost.getMessage());
 //            }
 //        }
+//
 //
 //        for (int i =0;i<friendsArr.length;i++) {
 //            JLabel friendLabel = new JLabel();
 //            Profile f = network.findNode(friendsArr[i]);
-//            friendLabel.setForeground(Color.WHITE);
+//            friendLabel.setForeground(Color.getColor("D1603D"));
 //            friendLabel.setText(f.getFirstName() + " " + f.getSurname());
 //            friendLabel.setSize(20, 20);
 //            friendLabel.setFont(new Font("Century Gothic", Font.PLAIN, 12));
@@ -79,20 +95,21 @@ public class Home implements ActionListener {
         }
 
         if (e.getSource() == nextButton) {
-//            for (int i =0;i<friendsArr.length;i++) {
-//                Profile f = network.findNode(friendsArr[i]);
-//                LinkedList<post> posts = f.getPosts();
-//                Iterator it = posts.iterator();
-//                while (it.hasNext()) {
-//                    postField.setForeground(Color.WHITE);
-//                    postField.setHorizontalAlignment(JLabel.LEFT);
-//                    post userPost = (post) it.next();
-//                    postField.setText(userPost.getMessage());
-//                    headingLabel.setText(userPost.getUserName() + " - " + userPost.getdate());
-//                }
-//            }
-
-            postField.setText("ashdfaishdf");
+            if (count +1 == friendsPosts.size()) {
+                count = count;
+            } else {
+                count++;
+                headingLabel.setText(friendsPosts.get(count).getUserName() + " - Posted on " + friendsPosts.get(count).getdate());
+                friendsPostField.setText(friendsPosts.get(count).getMessage());
+            }
+        } else if (e.getSource() == previousButton) {
+            if (count == 0) {
+                count = count;
+            } else {
+                count--;
+                headingLabel.setText(friendsPosts.get(count).getUserName() + " - Posted on " + friendsPosts.get(count).getdate());
+                friendsPostField.setText(friendsPosts.get(count).getMessage());
+            }
         }
     }
 

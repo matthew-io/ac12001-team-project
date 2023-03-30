@@ -76,16 +76,15 @@ public class Network {
     }
 
     public Profile findByUserName(Profile p , String enteredName) {
-        Profile user = null;
-        Boolean found = false;
-
-        if (p != null && found == false) {
-            if(p.getUsername().equals(enteredName)){
-                found = true;
-                user = p;
-            }
-            findByUserName(p.left, enteredName);
-            findByUserName(p.right, enteredName);
+        if (p == null) {
+            return null;
+        }
+        if (p.getUsername().equals(enteredName)) {
+            return p;
+        }
+        Profile user = findByUserName(p.left, enteredName);
+        if (user == null) {
+            user = findByUserName(p.right, enteredName);
         }
         return user;
     }

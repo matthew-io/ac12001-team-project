@@ -26,6 +26,8 @@ public class ProfileFrame implements ActionListener {
     private JTextArea bioTextArea;
     private JLabel editProfile;
     private JPanel mainFrame;
+    private JPanel headingPanel;
+    private JPanel infoPanel;
     private JScrollPane friendsScroll;
     private Profile user;
     private Network network;
@@ -46,17 +48,48 @@ public class ProfileFrame implements ActionListener {
         });
         bioTextArea.setText(p.getBio());
         friendsButton.setText("FRIENDS - " + friendsArr.length);
+        activityPanel.setBackground(Color.WHITE);
+        activityPanel.setForeground(Color.decode("#D1603D"));
+        headingPanel.setBackground(Color.WHITE);
+        buttonPanel.setBackground(Color.WHITE);
+        headerPanel.setBackground(Color.WHITE);
+        infoPanel.setBackground(Color.WHITE);
+        iconLabel.setBackground(Color.WHITE);
+        bioTextArea.setBackground(Color.WHITE);
+
         for (int i =0; i<p.getFriends().length;i++) {
-            JLabel friendLabel = new JLabel();
-            friendLabel.setText(" " + n.findNode(p.getFriends()[i]).getUsername() + " ");
-            friendLabel.setForeground(Color.WHITE);
-            friendLabel.setSize(20, 20);
-            friendsPanel.add(friendLabel);
+            if (p.getFriends().length > 0) {
+                JLabel friendLabel = new JLabel();
+                Profile f = network.findNode(p.getFriends()[i]);
+                if (f != null) {
+                    if (i == p.getFriends().length - 1) {
+                        friendLabel.setText(f.getFirstName() + " " + f.getSurname());
+                    } else {
+                        friendLabel.setText(f.getFirstName() + " " + f.getSurname() + " | ");
+                    }
+                    friendLabel.setForeground(Color.decode("#D1603D"));
+                    friendLabel.setFont(new Font("Century Gothic", Font.PLAIN, 12));
+                    friendLabel.setSize(20, 20);
+                    friendsPanel.setBackground(Color.WHITE);
+                    friendsPanel.add(friendLabel);
+                } else {
+                    System.out.println("NO PALS");
+                    friendLabel = new JLabel();
+                    friendLabel.setForeground(Color.decode("#D1603D"));
+                    friendLabel.setFont(new Font("Century Gothic", Font.PLAIN, 12));
+                    friendLabel.setSize(20, 20);
+                    friendLabel.setText("No friends :(");
+                    friendsButton.setText("Friends - 0");
+                    friendsPanel.setBackground(Color.WHITE);
+                    friendsPanel.add(friendLabel);
+                }
+            }
         }
 
-        JLabel mostRecentPost = new JLabel();
-        mostRecentPost.setForeground(Color.WHITE);
+        JTextArea mostRecentPost = new JTextArea();
+        mostRecentPost.setForeground(Color.decode("#D1603D"));
         mostRecentPost.setSize(20, 20);
+        mostRecentPost.setFont(new Font("Century Gothic", Font.PLAIN, 12));
 
         if (p.getPosts().isEmpty()) {
             mostRecentPost.setText("No Posts :(");
@@ -99,11 +132,6 @@ public class ProfileFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == friendsButton) {
-//            int[] friendsArr = user.getFriends();
-//            for (int i =0;i<user.getFriends().length;i++) {
-//                Profile f = network.findNode(friendsArr[i]);
-//                System.out.println(f.getUsername());
-//            }
             activityPanel.setVisible(false);
             aboutPanel.setVisible(false);
             friendsPanel.setVisible(true);
