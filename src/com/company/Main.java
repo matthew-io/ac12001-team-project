@@ -2,6 +2,7 @@ package com.company;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -25,61 +26,49 @@ public class Main {
                 String workplace = fields[3];
                 String hometown = fields[4];
 
-                network.addNode(new Profile(username, firstName, surname, workplace, hometown, network.getTotalProfiles() + 1));
+                Profile p = new Profile(username, firstName, surname, workplace, hometown, network.getTotalProfiles() + 1);
+                network.addNode(p);
             }
 
             scanner.close();
         } catch (FileNotFoundException e) {
             System.out.println("Error: " + e.getMessage());
         }
-
-        Profile p = network.findNode(1);
-        Profile f = network.findNode(2);
-
-        f.createPost("RANDOM SHIT");
-        p.createPost("Test Post 1 ");
-        p.createPost("Test Post 2 ");
-
-
-        network.traverseTree(p);
-        network.addFriends(1, 2);
-        network.addFriends(1, 4);
-        network.findNode(1).setBio("Praesent auctor congue consectetur. Proin in ex non diam interdum maximus id at lorem. Integer in pretium tortor. Nunc ac hendrerit metus. Fusce risus leo, malesuada id urna vel, tristique viverra diam. Sed maximus turpis at nisl tincidunt, id consequat orci bibendum. Morbi ligula odio, tincidunt nec ante a, sodales venenatis est. Vestibulum tristique metus urna, quis hendrerit quam suscipit eget. Etiam viverra a mi et dignissim. Vestibulum sollicitudin neque quis velit tincidunt, vitae mattis nisl varius.");
-
-//        LinkedList<post> posts = p.getPosts();
-//
-//        Iterator it = posts.iterator();
-//
-//        while (it.hasNext()) {
-//            post userPost = (post) it.next();
-//            System.out.println(userPost.getMessage());
-//        }
 
         try {
-//here you need to change the absoloute path to whateer it is on your computer i think
-            File file = new File("C:\\Users\\alexandergordon\\Desktop\\29_03_2023 project\\ac12001-team-project\\src\\com\\company\\postInfo.txt");
-            Scanner scanner = new Scanner(file);
+            File file = new File("src/com/company/postInfo.txt");
+            Scanner scan = new Scanner(file);
 
-            int counter = 0;
-            while (scanner.hasNextLine()) {
-                String[] arrayValue = scanner.nextLine().split(",,,;;;,,,");
-
-                network.setMessages(counter,arrayValue[0]);
-                System.out.println(arrayValue[0]);
-                network.setDates(counter,arrayValue[1]);
-                System.out.println(arrayValue[1]);
-                network.setPostUserID(counter,Integer.parseInt(arrayValue[2]));
-                System.out.println(arrayValue[2]);
-                counter += 1;
-
-
-
-            }
-
-            scanner.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Error: " + e.getMessage());
+            while (scan.hasNextLine()) {
+                String[] lineArr = scan.nextLine().split(",,,;;;,,,");
+                int userId = Integer.parseInt(lineArr[2]);
+                Profile p = network.findNode(userId);
+                p.createPost(lineArr[0]);
+            };
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
+//        try {
+//            File file = new File("src/com/company/postInfo.txt");
+//            Scanner scanner = new Scanner(file);
+//
+//            int counter = 0;
+//            while (scanner.hasNextLine()) {
+//                String[] arrayValue = scanner.nextLine().split(",,,;;;,,,");
+//
+//                network.setMessages(counter,arrayValue[0]);
+//                System.out.println(arrayValue[0]);
+//                network.setDates(counter,arrayValue[1]);
+//                System.out.println(arrayValue[1]);
+//                network.setPostUserID(counter,Integer.parseInt(arrayValue[2]));
+//                System.out.println(arrayValue[2]);
+//                counter += 1;
+//            }
+//            scanner.close();
+//        } catch (FileNotFoundException e) {
+//            System.out.println("Error: " + e.getMessage());
+//        }
 
         LoginFrame loginFrame = new LoginFrame(network);
         loginFrame.displayFrame();

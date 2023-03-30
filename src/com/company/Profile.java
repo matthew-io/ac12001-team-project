@@ -19,7 +19,6 @@ public class Profile {
 
     Profile left, right;
 
-
     public void createPost(String message) {
         Date thisDate = new Date();
         SimpleDateFormat date = new SimpleDateFormat("dd/MM/YY");

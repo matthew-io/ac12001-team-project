@@ -95,7 +95,7 @@
                           <foreground color="-12237499"/>
                           <horizontalAlignment value="2"/>
                           <horizontalTextPosition value="2"/>
-                          <text value="Enter your ID:"/>
+                          <text value="Enter your username: "/>
                         </properties>
                       </component>
                       <component id="4a57f" class="javax.swing.JTextField" binding="textField1" default-binding="true">

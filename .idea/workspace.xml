@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8b80377-7f0a-40ab-a390-57e1cb067992" name="Changes" comment="pushing most recent changes">
+    <list default="true" id="455ca067-0275-4ca4-8f92-e9f84647b26f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/addFriend.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/addFriend.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/friends.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/postInfo.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/user_bios.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/EditProfile.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/EditProfile.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/EditProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/EditProfile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Home.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Home.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/LoginFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LoginFrame.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Profile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/ProfileFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ProfileFrame.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/ProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ProfileFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/images/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/images/icon.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +45,9 @@
     </file-type-list>
   </component>
   <component name="MacroExpansionManager">
-    <option name="directoryName" value="enpuus53" />
+    <option name="directoryName" value="s7py2c8m" />
   </component>
-  <component name="ProjectId" id="2Ngpv7tnvJbhHjm9YA2C9S0XKhx" />
+  <component name="ProjectId" id="2NhvIYqWejtw1Y4M1Gz58HpRCHJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -46,7 +55,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
   </component>
   <component name="RunManager">
@@ -72,41 +81,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e8b80377-7f0a-40ab-a390-57e1cb067992" name="Changes" comment="" />
-      <created>1680095806286</created>
+      <changelist id="455ca067-0275-4ca4-8f92-e9f84647b26f" name="Changes" comment="" />
+      <created>1680129049103</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1680095806286</updated>
+      <updated>1680129049103</updated>
     </task>
-    <task id="LOCAL-00001" summary="changes to everything">
-      <created>1680096008083</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1680096008083</updated>
-    </task>
-    <task id="LOCAL-00002" summary="push for drew">
-      <created>1680101962957</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1680101962957</updated>
-    </task>
-    <task id="LOCAL-00003" summary="pushing most recent changes">
-      <created>1680103403352</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1680103403352</updated>
-    </task>
-    <task id="LOCAL-00004" summary="pushing most recent changes">
-      <created>1680107100922</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1680107100922</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,11 +100,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="changes to everything" />
-    <MESSAGE value="push for drew" />
-    <MESSAGE value="pushing most recent changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="pushing most recent changes" />
   </component>
 </project>

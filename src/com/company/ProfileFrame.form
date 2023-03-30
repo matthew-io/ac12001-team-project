@@ -16,7 +16,7 @@
         <margin top="10" left="15" bottom="10" right="15"/>
         <constraints border-constraint="North"/>
         <properties>
-          <background color="-14935012"/>
+          <background color="-3055555"/>
           <enabled value="true"/>
         </properties>
         <border type="line">
@@ -54,19 +54,21 @@
         <margin top="10" left="10" bottom="10" right="10"/>
         <constraints border-constraint="Center"/>
         <properties>
-          <background color="-14935012"/>
+          <background color="-1"/>
+          <foreground color="-723724"/>
         </properties>
         <border type="line">
           <color color="-4473925"/>
         </border>
         <children>
-          <grid id="b2fd2" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="b2fd2" binding="headingPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-14935012"/>
+              <background color="-723724"/>
+              <foreground color="-1"/>
             </properties>
             <border type="none"/>
             <children>
@@ -80,7 +82,8 @@
                   </grid>
                 </constraints>
                 <properties>
-                  <background color="-14935012"/>
+                  <background color="-657931"/>
+                  <foreground color="-657931"/>
                 </properties>
                 <border type="none"/>
                 <children>
@@ -141,27 +144,33 @@
                 </constraints>
                 <properties>
                   <background color="-14935012"/>
+                  <foreground color="-1"/>
                 </properties>
                 <border type="none"/>
                 <children>
                   <component id="3a219" class="javax.swing.JLabel" binding="iconLabel">
                     <constraints border-constraint="West"/>
                     <properties>
+                      <background color="-723724"/>
+                      <foreground color="-657931"/>
                       <icon value="com/company/images/icon.png"/>
                       <maximumSize width="120" height="100"/>
                       <minimumSize width="120" height="100"/>
-                      <opaque value="false"/>
+                      <opaque value="true"/>
                       <preferredSize width="120" height="100"/>
                       <text value="Label"/>
                     </properties>
                   </component>
-                  <grid id="2f47f" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                    <margin top="0" left="0" bottom="0" right="0"/>
+                  <grid id="2f47f" binding="infoPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="5" left="5" bottom="0" right="5"/>
                     <constraints border-constraint="Center"/>
                     <properties>
-                      <background color="-14935012"/>
+                      <background color="-657931"/>
+                      <foreground color="-1"/>
                     </properties>
-                    <border type="none"/>
+                    <border type="line">
+                      <color color="-3055555"/>
+                    </border>
                     <children>
                       <component id="c2e67" class="javax.swing.JLabel" binding="bioLabel">
                         <constraints>
@@ -172,9 +181,9 @@
                           </grid>
                         </constraints>
                         <properties>
-                          <background color="-1"/>
+                          <background color="-3055555"/>
                           <font name="Century Gothic"/>
-                          <foreground color="-1"/>
+                          <foreground color="-3055555"/>
                           <text value="BIO"/>
                           <verticalAlignment value="3"/>
                           <verticalTextPosition value="3"/>
@@ -187,13 +196,23 @@
                           </grid>
                         </constraints>
                         <properties>
-                          <background color="-14935012"/>
-                          <editable value="false"/>
+                          <background color="-723724"/>
+                          <editable value="true"/>
                           <font name="Century Gothic"/>
-                          <foreground color="-1"/>
+                          <foreground color="-3055555"/>
                           <lineWrap value="true"/>
-                          <text value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere iaculis metus, in convallis augue vestibulum in. Nunc gravida mattis elit. Aenean diam diam, placerat ut rutrum vel, lacinia pulvinar elit. Proin nibh metus, bibendum ac arcu vel, tincidunt molestie neque. Integer magna odio, facilisis non justo vitae, varius iaculis ipsum. Morbi congue justo arcu, in consequat arcu porttitor quis. Fusce ac eleifend risus, vitae volutpat ligula. Fusce hendrerit tincidunt arcu sed mattis. Morbi non placerat diam. Morbi ac felis eu mauris fringilla imperdiet cursus sit amet sapien. Ut vitae tincidunt felis, ut tempor dolor. Nulla placerat aliquam sapien, nec ultricies neque vestibulum id. Integer ut elit lectus. Cras et nunc lorem. Suspendisse suscipit nunc eu felis ultrices, lacinia fermentum lorem suscipit."/>
+                          <text value="Enter a bio here..."/>
                           <wrapStyleWord value="true"/>
+                        </properties>
+                      </component>
+                      <component id="24712" class="javax.swing.JButton" binding="submitButton">
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="50" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-1"/>
+                          <foreground color="-9538956"/>
+                          <text value="SUBMIT"/>
                         </properties>
                       </component>
                     </children>
@@ -205,33 +224,66 @@
           <grid id="2750f" binding="activityPanel" layout-manager="GridBagLayout">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <minimum-size width="-1" height="550"/>
-                <preferred-size width="-1" height="550"/>
-                <maximum-size width="-1" height="550"/>
+                <minimum-size width="-1" height="200"/>
+                <preferred-size width="-1" height="200"/>
+                <maximum-size width="-1" height="200"/>
               </grid>
             </constraints>
             <properties>
-              <background color="-14935012"/>
-              <foreground color="-1312513"/>
+              <background color="-723724"/>
+              <foreground color="-657931"/>
             </properties>
-            <border type="none" title="RECENT ACTIVITY" title-justification="2">
+            <border type="line" title="RECENT ACTIVITY" title-justification="2">
               <font name="Century Gothic" size="12"/>
-              <title-color color="-1"/>
+              <title-color color="-3055555"/>
+              <color color="-3844280"/>
             </border>
-            <children/>
+            <children>
+              <component id="d0b67" class="javax.swing.JLabel" binding="dateLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="5" bottom="5" right="5" weightx="1.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <enabled value="true"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <grid id="787b7" binding="postPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="5" bottom="5" right="55" weightx="1.0" weighty="1.0"/>
+                </constraints>
+                <properties>
+                  <background color="-1"/>
+                  <foreground color="-14935012"/>
+                  <maximumSize width="400" height="32767"/>
+                  <minimumSize width="400" height="10"/>
+                  <preferredSize width="400" height="10"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="c2912" class="javax.swing.JTextArea" binding="postTextArea">
+                    <constraints border-constraint="Center"/>
+                    <properties/>
+                  </component>
+                </children>
+              </grid>
+            </children>
           </grid>
           <grid id="ce65b" binding="friendsPanel" layout-manager="GridBagLayout">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-14935012"/>
+              <background color="-723724"/>
               <enabled value="false"/>
-              <foreground color="-723724"/>
+              <foreground color="-3055555"/>
             </properties>
-            <border type="none" title="FRIENDS" title-justification="2">
+            <border type="line" title="FRIENDS" title-justification="2">
               <font name="Century Gothic" size="12" style="0"/>
-              <title-color color="-1"/>
+              <title-color color="-3844280"/>
+              <color color="-3055555"/>
             </border>
             <children/>
           </grid>
@@ -241,12 +293,13 @@
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-14935012"/>
+              <background color="-723724"/>
               <enabled value="false"/>
             </properties>
             <border type="none">
               <font name="Century Gothic" size="12"/>
-              <title-color color="-1"/>
+              <title-color color="-3055555"/>
+              <color color="-3055555"/>
             </border>
             <children>
               <grid id="fb2cd" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="1">
@@ -255,11 +308,12 @@
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-14935012"/>
+                  <background color="-1"/>
                 </properties>
-                <border type="none" title="ABOUT" title-justification="2">
+                <border type="line" title="ABOUT" title-justification="2">
                   <font name="Century Gothic" size="12"/>
-                  <title-color color="-1"/>
+                  <title-color color="-3055555"/>
+                  <color color="-3055555"/>
                 </border>
                 <children>
                   <component id="fa35d" class="javax.swing.JLabel" binding="locationLabel">
@@ -269,7 +323,7 @@
                     <properties>
                       <background color="-1"/>
                       <font name="Century Gothic" style="0"/>
-                      <foreground color="-1"/>
+                      <foreground color="-3055555"/>
                       <text value="Location:"/>
                     </properties>
                   </component>
@@ -280,7 +334,7 @@
                     <properties>
                       <background color="-1"/>
                       <font name="Century Gothic" style="0"/>
-                      <foreground color="-1"/>
+                      <foreground color="-3055555"/>
                       <text value="Label"/>
                     </properties>
                   </component>
@@ -291,7 +345,7 @@
                     <properties>
                       <background color="-1"/>
                       <font name="Century Gothic" style="0"/>
-                      <foreground color="-1"/>
+                      <foreground color="-3055555"/>
                       <text value="Label"/>
                     </properties>
                   </component>
