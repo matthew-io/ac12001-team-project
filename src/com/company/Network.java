@@ -63,9 +63,9 @@ public class Network {
 
     public void writePostToFile(String text, String Date , int userID) {
         try {
-            FileWriter fileWriter = new FileWriter("src/com/company/postInfo.txt", true);
+            FileWriter fileWriter = new FileWriter("C:\\Users\\alexandergordon\\Desktop\\29_03_2023 project\\ac12001-team-project\\src\\com\\company\\postInfo.txt", true);
             PrintWriter printWriter = new PrintWriter(fileWriter);
-            String textToAppend = (text + ",,,;;;,,," + Date) + ",,,;;;,,," + userID;
+            String textToAppend = (text + ",,,;;;,,," + Date) + ",,,;;;,,," + userID ;
             printWriter.println(textToAppend);
             printWriter.close();
         }
@@ -75,16 +75,17 @@ public class Network {
         }
     }
 
-    public Profile findByUserName(Profile p, String enteredName) {
-        if (p == null) {
-            return null;
-        }
-        if (p.getUsername().equals(enteredName)) {
-            return p;
-        }
-        Profile user = findByUserName(p.left, enteredName);
-        if (user == null) {
-            user = findByUserName(p.right, enteredName);
+    public Profile findByUserName(Profile p , String enteredName) {
+        Profile user = null;
+        Boolean found = false;
+
+        if (p != null && found == false) {
+            if(p.getUsername().equals(enteredName)){
+                found = true;
+                user = p;
+            }
+            findByUserName(p.left, enteredName);
+            findByUserName(p.right, enteredName);
         }
         return user;
     }
