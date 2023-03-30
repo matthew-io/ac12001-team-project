@@ -3,14 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e8b80377-7f0a-40ab-a390-57e1cb067992" name="Changes" comment="pushing most recent changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/EditProfile.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/EditProfile.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/EditProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/EditProfile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Home.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Home.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Network.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/ProfileFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ProfileFrame.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/ProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ProfileFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/friends.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/friends.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/profiles.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/profiles.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +46,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
   </component>
   <component name="RunManager">

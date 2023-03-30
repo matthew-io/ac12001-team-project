@@ -66,5 +66,3 @@ CosmicCaterpillar, Abigail, Hernandez, Tesco, Fyfe
 ElectricEagle, Joseph, White, Student, Dundee
 WhimsicalWombat, Charlotte, Garcia, Aldi, Forfar
 MagicMule, Michael, Perez, Cleaner, Dundee
-SwaggySausage, Bart, Minstrel, Student, Fyfe
-SlimySasquatch, Hairy, Bob, Cleaner, Dundee
